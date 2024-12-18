@@ -1,0 +1,19 @@
+#exampleText{
+    position: static;
+    color: green !important;
+    color: red;
+}
+
+.static-element {
+    position: static;
+    background-color: rgb(13, 48, 59);
+    padding: 10px;
+}
+
+.relative-element {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    background-color: rgb(12, 48, 12);
+    padding: 10px;
+}

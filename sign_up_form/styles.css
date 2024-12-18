@@ -1,0 +1,106 @@
+#userForm {
+    font-size: 1rem;
+}
+
+/* i need to find some cool font for this sign-up form */
+.intro-stuff, legend, #loginp{
+    font-family: 'Trebuchet MS';
+} 
+
+/* or i could select only SPECIFIC labels that are in
+that # form*/
+label {
+    font-family: 'Verdana'; /* for now only */
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+#userForm > button{
+    font-family: 'Trebuchet MS';
+    background-color: #596D48;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+    width: 150px;
+} 
+/* how do i style the inputs ?! */
+#userForm input{
+    border-color: #E5E7EB;
+    border-radius: 3px;
+}
+
+/*
+#userForm input[type='password']:invalid{
+    border: 2px solid rgb(215, 63, 63);
+} - first way to style*/
+
+.error-message{
+    color: rgb(215, 63, 63);
+    font-size: 0.9em;
+    display: none;
+}
+
+#psswdCheck:invalid + .error-message{
+    display: block;
+}
+
+
+#userPassword:invalid,
+#psswdCheck:invalid{
+    border: 2px solid rgb(215, 63, 63);
+} /* why isnt the border staying red even if theres less than 8 or more
+than 30 characters? what the bug*/
+
+#userForm ~ input:focus{
+    border: 2px solid purple;
+    box-shadow: 2px solid black;
+}
+
+.error-message {
+    color: rgb(215, 63, 63);
+    font-size: 0.9em;
+    display: none;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid rgb(74, 74, 74);
+}
+
+legend { 
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-left, .input-right {
+    flex: 1;
+    margin-right: 0 10px;
+}
+
+input {
+    width: 70%;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+
+
+/*
+Flexbox: Great for aligning items in a row or column. Use
+`display: flex;` and properties like `flex-direction`,
+`justify-content`, and `align-items`. */

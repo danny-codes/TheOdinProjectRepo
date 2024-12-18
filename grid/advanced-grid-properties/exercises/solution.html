@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  
+
+<div class="container">
+  <div class="item">long content long content long content long content long content</div>
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+</div>
+
+
+
+  <style>
+    
+    html {
+      background: #f6faff;
+    }
+    
+    .container {
+      display: grid;
+      grid-auto-columns: minmax(15rem, auto);
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      grid-gap: 1rem;
+    }
+    .item {
+      background: #f1e9f7;
+      border: 3px solid #a579cc;
+      color: #a579cc;
+      padding: 2rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /*02. stretching out using flexbox to demonstrate the content flow ability */
+    .container {
+
+      display: flex;
+      flex-wrap: wrap;
+      margin: -0.5rem;
+    }
+    .item {
+      margin: 0.5rem;
+    }
+    
+    
+
+  </style>
+</body>
+</html>

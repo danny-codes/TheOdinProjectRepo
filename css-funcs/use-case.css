@@ -1,0 +1,38 @@
+body{
+    /*background-color: rgb(42, 41, 41);*/
+    background-color: #333;
+    color: white;
+}
+
+article{
+    overflow: auto;
+    background-color: #444;
+    padding: 1rem;
+}
+
+main p{
+    overflow:auto;
+    clear:both;
+    margin: 2rem 0; 
+    font-size: clamp(0.5rem, 4vh, 3rem);
+    font-weight: 300;
+    /* font weights:
+    300- light
+    400 - normal
+    700 - bold
+    */
+}
+
+main p img{
+    float: left;
+    margin: 0.5rem 1rem 1rem 0; /* margin: top right bottom left*/
+    width: max(50%, 300px); /* 
+    it's at least 300px. if 50% of the parent is larger 
+    than 300px, it will be 50% of the parent.
+    if 50% of the parent is smaller than 300px, it will be 300px
+    == min-width: 300px; width: 50%; */
+    /*width: min(50%, 300px);*/ /* 
+    if 50% of the content is smaller than 300px, it's gonna be 50% of the parent
+    max-width: 300px; width: 50%; */
+}
+

@@ -1,0 +1,83 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Holy Grail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header" class="item">Header</div>
+        <div id="sidebar" class="item">Sidebar</div>
+        <div id="nav" class="item">Nav</div>
+        <div id="article" class="item">Article
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <p>Ipsam illum veritatis dicta dolor, excepturi praesentium tenetur minima cupiditate totam quas, eos dolore, vitae et nulla voluptate fugit facilis placeat? Nemo?</p>
+        </div>
+        <div id="footer" class="item">Footer</div>
+    </div>
+    
+    <style>
+        .container {
+            display: grid;
+            /* FIRST ATTEMPT grid-template: 60px 300px 60px 60px / 200px 600px; */
+            grid-template: 70px 350px 70px 70px / 300px 900px;
+            gap: 15px;
+            padding: 16px;
+            height: 100%;
+            /* grid-template: 0.20fr 1fr 0.20fr 0.20fr / 0.9fr 2.7fr; - my first solution*/
+            grid-template: 1fr 1fr 5fr 1fr / 1fr 3fr;
+        }
+        
+        .container div {
+            font-size: 16px;
+            padding: 15px;
+            font-weight: bold;
+            font-family: Helvetica, sans-serif;
+            color:white;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        #article p {
+            font-size: 12px;
+            font-family: sans-serif;
+            color: white;
+            text-align: left;
+        }
+        
+        #header {
+            background-color: green;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 1; 
+        }
+        
+        #sidebar {
+            background-color: blue;
+            grid-area: 2 / 1 / 4 / 2;
+        }
+        
+        #nav {
+            background-color: rgb(85, 7, 158);
+            grid-area: 2 / 2 / 3 / 3;
+        }
+        
+        #article {
+            background-color: violet;
+            /*grid-area: 3 / 2 / 4 / 3;*/
+            grid-area: 3 / 2 / 4 / 3;
+        
+        }
+        
+        
+        #footer {
+            background-color: rgb(65, 65, 65);
+            grid-area: 4 / 1 / 5 / 3;
+        }
+    </style>
+
+</body>
+</html>

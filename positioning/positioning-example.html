@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positioning simple example</title>
+</head>
+<body>
+
+    <div class="header">Header</div>
+    <br>
+
+    <div class="parent">
+        Parent
+        <div class="child-one child">One</div>
+        <div class="child-two child">Two</div>
+        <div class="child-three child">Three</div>
+    </div>
+
+    <style>
+        *{
+            font-family: 'JetBrains Mono';
+        }
+        .parent{
+            background-color: rgb(222, 222, 225);
+            position: relative;
+            height: 200vh;
+        }
+        .child{
+            padding: 5px;
+        }
+        .child-one{
+            background-color: coral;
+            position: absolute;
+            top: 0;
+            right: 0;
+            
+        }
+        .child-two{
+            background-color: rgb(228, 212, 242);
+        }
+        .child-three{
+            background-color: yellowgreen;
+        }
+        .header{
+            background-color: rgb(255, 227, 232);
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            width: 100%;
+            border-radius: 0;
+        }
+
+    </style>
+
+</body>
+</html>

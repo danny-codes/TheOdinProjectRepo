@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!--icon-->
+    <link rel="icon" type="image/x-icon" href="assets/book-solid.svg">
+
+</head>
+<body>
+
+    <div class="workingArea">
+        <h1>Digital Book library</h1> 
+        <div class="book1"></div>
+        <p>
+            <span class="highlight">This is digital library</span>
+        </p>
+    </div>
+
+    <!--button type="button" id="btnAddBook">Add new book</!--button-->
+
+    <form id="formGeneral">
+        <label for="title" id="coloringFormText">Book title:</label><br>
+        <input type="text" id="title" name="title"> <input type="reset" id="resetTitle"><br>
+
+        <label for="author" id="coloringFormText">Book author:</label><br>
+        <input type="text" id="author" name="author"> <input type="reset" id="resetAuthor"><br>
+
+        <label for="pages" id="coloringFormText">Number of pages:</label><br>
+        <input type="number" id="pages" name="pages"> <input type="reset" id="resetPages"><br>
+
+        <label for="isRead" id="coloringFormText">Is book read?</label>
+            <select name="isRead" id="isRead" type="text">
+                <option value="yes">Read</option>
+                <option value="no">Not read yet</option>
+            </select><br>
+        <button type="button" id="sendBtn">Submit Book</button><br>
+        <!--input type="reset" id="reset"-->
+    </form><br>
+    </form>
+
+    <div class="booksDiv" id="booksDiv"></div>
+    <div id="tableDiv"></div>
+
+    <script src="library.js"></script> 
+
+<style>
+
+#formInput{
+    color:blanchedalmond;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('assets/SourceSans3-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.workingArea{
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    text-align:center;
+    background-color: rgb(3, 3, 38);
+    height: 100vh;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+}
+
+p{
+    color: rgb(255, 230, 230);
+}
+
+.highlight{
+    display: inline;
+    padding: 1px 0;
+    background: hsla(62, 100%, 54%, 0.89);
+    color: rgb(38, 38, 38);
+}
+
+#coloringFormText{
+    color: rgb(224, 224, 224);
+}
+
+Div{
+    display: block;
+    text-align: center;
+    color: white;
+}
+
+.booksDiv{
+    display:flex;
+}
+
+
+.book-div-style{
+    color: rgb(224, 224, 224);
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #505050;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+h2 {
+background-color: #333;
+color: #fff;
+padding: 8px;
+text-align: center;
+}
+
+</style>
+</body>
+</html>

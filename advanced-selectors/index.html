@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Selectors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<p>hello. This is my terminal lol</p><br>
+<span class="codelink"><a href="hello.html" target="_blank"><code>print('helloWorld!')</code></a></span>
+
+<!----
+    -->
+
+<br>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<br>
+<a href="#inputTypes">Learn about input types!</a>
+<p class="box"> Content in the box in my HTML page.</p>
+
+<article>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sit unde deleniti sunt aut dolore
+        repellendus,
+        nulla suscipit? Voluptas vitae pariatur reprehenderit consectetur aliquam quibusdam fugiat dignissimos in!
+        Omnis, soluta?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est praesentium officia consectetur ea molestias
+        doloremque similique labore aliquid! Accusantium cumque aut reprehenderit libero quidem veniam omnis magnam
+        dicta, at aliquid.</p>
+</article>
+
+<main class="parent">
+    <div class="child group1">
+        <div class="grand-child group1"></div>
+    </div>
+    <div class="child group2">
+        <div class="grand-child group2"></div>
+    </div>
+    <div class="child group3">
+        <div class="grand-child group3"></div>
+    </div>
+</main>
+
+<!-- specificity value-->
+
+<ul id="summer-drinks">
+    <li class="favorite">Whiskey and Ginger Ale</li>
+    <li>Wheat Beer</li>
+    <li>Mint Julip</li>
+</ul>
+
+<!-- pseudo classes-->
+
+
+<div class="element">
+
+    <h1> :fullscreen pseudo-class</h1>
+
+    <p>This demo uses the <code>:fullscreen</code> pseudo-class to automatically
+        change the background color of the <code>.element</code> div. </p>
+
+    <p>
+        Normally, the background is light yellow. In fullscreen mode, the background
+        is light pink.
+    </p>
+
+    <button class="toggle">Toggle Fullscreen</button>
+
+</div>
+
+<Br>
+
+<!-- :focus s-->
+
+<label for="email">Email:</label>
+<input class="formEmail">
+<button id="emailBtn">Confirm</button>
+
+<h1 id="hover">Hover over me!!!</h1>
+
+<a href="https://www.reddit.com/r/unixporn/" id="redditLink">cLick mE!!</a>
+
+<section class="grid">
+    <article class="module">One</article>
+    <article class="module">Two</article>
+    <article class="module">Three</article>
+    <article class="module">Four</article>
+    <article class="module">Five</article>
+</section>
+
+<div class="listDiv">
+    <li class="myList">One</li>
+    <li class="myList">Two</li>
+    <li class="myList">Three</li>
+    <li class="myList">Four</li>
+    <li class="myList">Five</li>
+</div>
+
+<h1 class="exampleOfPE">First letter here is ORANGE</h1>
+
+<div> Let's <span class="emojify"> emojify </span> this span!</div>
+
+<button id="showDialogBtn">Show a dialog</button>
+
+<dialog id="favDialog">
+    <form method="dialog">
+        <p>The background shown outside of this dialog is a backdrop.</p>
+        <button id="confirmBtn">Close the dialog</button>
+    </form>
+</dialog>
+
+<p><code>::marker</code> test</p>
+<ul>
+    <li class="mTest">me</li>
+</ul>
+
+<!--Attribute selectors-->
+
+<a href="https://example.com" title="Visit Example Website">Example Website</a>
+
+<div id="main-content">Main Content Div</div>
+
+<br>
+<div lang="en-us en-gb en-au en-nz">Hello World!</div>
+<div lang="pt">Olá Mundo!</div>
+<div lang="zh-Hans-CN">世界您好！</div>
+<div lang="zh-Hant-TW">世界您好！</div>
+<div data-lang="zh-Hant-TW">世界您好！</div>
+
+<div class="table">
+    <plate id="fancy">
+        <apple class="small" />
+    </plate>
+    <plate />
+    <plate>
+        <orange class="small" />
+        <orange />
+    </plate>
+    <pickle class="small" />
+</div>
+
+<input type="checkbox" id="toggle">
+<label for="toggle">&#9776;</label>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<a href="#" id="alertLink">Click me to show an alert</a>
+<br>
+<input type="text" disabled>
+
+<section id="inputTypes">
+    <h1>INPUT TYPES</h1>
+    <p>some input types</p>
+    <p>text</p>
+    <input type=text placeholder="type something here">
+    <p>password</p>
+    <input type="password" placeholder="your pass here">
+    <p>number</p>
+    <input type="number" placeholder="123...">
+    <p>date</p>
+    <input type="date">
+    <p>checkbox</p>
+    <input type="checkbox">
+    <p>radio</p>
+    <input type="radio">
+    <p>file</p>
+    <input type="file" id="fileInput">
+    <button onclick="resetFile()">Reset File</button>
+    <p>submit</p>
+    <input type="submit" value="This is custom value">
+    <p>button</p>
+    <input type="button">
+</section>
+
+<h1>More pseudo-classes Examples</h1>
+<small>NMC</small>
+<table>
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Player</th>
+            <th>Position</th>
+            <th>Height</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>8</td>
+            <td>Marco Belinelli</td>
+            <td>G</td>
+            <td>6-5</td>
+            <td>195</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Carlos Boozer</td>
+            <td>F</td>
+            <td>6-9</td>
+            <td>266</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="https://duckduckgo.com/">Search the Web</a><br>
+<a href="http://learn.shayhowe.com/">Learn How to Build Websites</a>
+
+
+<script src="script.js">
+    var link = document.getElementById("alertLink");
+
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        alert("You clicked the link!");
+
+        return false;
+
+    });
+</script>
+
+</body>
+
+</html>
