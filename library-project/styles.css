@@ -1,0 +1,52 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 { 
+    text-align: center;
+}
+
+.book-card {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    font-size: 16px;
+    width: 150px;
+}
+
+.horizontal-center {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.hidden-form {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
