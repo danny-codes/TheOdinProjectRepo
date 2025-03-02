@@ -19,7 +19,6 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-    // displayBooks(newBook);
     displayBooks();
 }
 
@@ -28,11 +27,12 @@ addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
 function displayBooks(book) {
     container.innerHTML = "";
 
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book, index) => {
         let card = document.createElement("div");
         card.classList.add("book-card");
         container.appendChild(card);
-        // card.setAttribute('data-index', myLibrary[i])
+
+        card.setAttribute('data-index', index)
 
         let header = document.createElement("h3");
         header.textContent = book.title;
@@ -49,6 +49,18 @@ function displayBooks(book) {
         let readStatus = document.createElement("p");
         readStatus.textContent = book.read ? "Read" : "Not read yet";
         card.appendChild(readStatus);
+        
+        let removeBook = document.createElement('button');
+        removeBook.classList.add('remove-btn');
+        removeBook.textContent = 'Remove book';
+        card.appendChild(removeBook);
+        
+        let cardIndex = card.getAttribute('data-index');
+        
+        removeBook.addEventListener('click', () => {
+            myLibrary.splice(index, 1);
+            card.remove();
+        });
     });
 }
 
@@ -68,17 +80,15 @@ function addInputToArray() {
     const isReadValue = isReadInput.checked;
     console.log(isReadValue);
 
-    if (titleValue && authorValue &&
-        pagesValue && isReadValue) {
-            myLibrary.push({title: titleValue, author: authorValue,
-                pages: pagesValue, read: isReadValue
-            });
+    if (titleValue && authorValue && pagesValue) {
+        addBookToLibrary(titleValue, authorValue, pagesValue, isReadValue);
+
         titleInput.value = '';
         authorInput.value = '';
-        pagesValue.value = '';
+        pagesInput.value = '';
         isReadInput.checked = false;
         console.table(myLibrary);
-        }
+    }
     else {
         alert('Please fill in all fields.');
     }
@@ -88,8 +98,3 @@ addBookBtn.addEventListener('click', (e) => {
     bookForm.style.display = 'none';
     e.preventDefault();
 });
-
-// for (let i = 0; i < myLibrary.length; i++) {
-//     console.log(myLibrary[i]);
-//     console.log('for loop working');
-// }
