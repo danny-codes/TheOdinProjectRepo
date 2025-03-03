@@ -46,7 +46,8 @@ function displayBooks(book) {
         pagesP.textContent = `${book.pages} pages`;
         card.appendChild(pagesP);
 
-        let readStatus = document.createElement("p");
+        // let readStatus = document.createElement("p");
+        let readStatus = document.createElement("button");
         readStatus.textContent = book.read ? "Read" : "Not read yet";
         card.appendChild(readStatus);
         
@@ -56,6 +57,11 @@ function displayBooks(book) {
         card.appendChild(removeBook);
         
         let cardIndex = card.getAttribute('data-index');
+
+        readStatus.addEventListener('click', () => {
+            book.read ? book.read = false : book.read = true;
+            readStatus.textContent = book.read ? "Read" : "Not read yet";
+        });
         
         removeBook.addEventListener('click', () => {
             myLibrary.splice(index, 1);
