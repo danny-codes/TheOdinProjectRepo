@@ -2,6 +2,21 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-rows: repeat(3, minmax(150px, 1fr));
+    border: 2px black solid;
+}
+.cell {
+    border: 2px rgb(1, 215, 105) solid;
+}
+
 @font-face {
     font-family: 'Roboto';
     src: url(./fonts/Roboto-Regular.woff2);
