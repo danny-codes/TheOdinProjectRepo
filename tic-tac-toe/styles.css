@@ -1,20 +1,31 @@
 body {
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to left,rgb(252, 63, 249), rgb(154, 98, 211), rgb(126, 0, 230));
 }
 
 h1 {
     text-align: center;
     padding-bottom: 15px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
-    grid-template-rows: repeat(3, minmax(150px, 1fr));
-    border: 2px black solid;
+    grid-template-columns: repeat(3, minmax(100px, 110px));
+    grid-template-rows: repeat(3, minmax(100px, 110px));
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
 }
 .cell {
-    border: 2px rgb(1, 215, 105) solid;
+    background-color: white;
+    border-radius: 10px;
+    margin: 7px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 @font-face {
