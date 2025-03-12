@@ -1,18 +1,50 @@
 body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(to right, rgb(255, 142, 142), rgb(106, 106, 255));
+    color: white;
 }
 
 h2 { 
     text-align: center;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
 }
 
 .book-card {
     padding: 10px;
     margin: 5px;
-    border: 1px solid black;
-    background-color: lightgrey;
+    /* border: 1px solid black; */
+    background-color: rgb(173, 121, 121);
     font-size: 16px;
     width: 150px;
+    height: 170px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.book-card button {
+    border: none;
+    border-radius: 3px;
+    margin: 3px;
+    font-size: 13px;
+    color:#ffffff;
+    background-color: rgb(176, 176, 176);
+    cursor: pointer;
+}
+
+#new-book {
+    border: none;
+    background-color: rgb(101, 187, 126);
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 25px;
+    width: 100px;
+    cursor: pointer;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .book-card * {
@@ -35,6 +67,7 @@ h2 {
 form {
     max-width: 400px;
     margin: 0 auto;
+    color: rgb(79, 79, 79);
 }
 
 form label {
