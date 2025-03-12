@@ -28,6 +28,11 @@ h1 {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+.cell:hover {
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;
+}
+
 #startBtn {
     width: 120px;
     height: 25px;
