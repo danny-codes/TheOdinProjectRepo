@@ -14,7 +14,7 @@ const Gameboard = (function () {
     }
 })();
 
-let winningCombinations = {
+let winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -22,8 +22,8 @@ let winningCombinations = {
     [2, 4, 6],
     [0, 3, 6],
     [1, 4, 7],
-    [2, 5, 8]
-}
+    [2, 5, 8],
+]
 
 const Player = (name, symbol) => ({
     name,
@@ -39,3 +39,18 @@ playerX.name = 'Jane';
 
 let playerO = new Player;
 playerO.name = 'John';
+
+function startGame() {
+    if (playerX.turn) {
+        playerX.turn = false;
+        playerO.turn = true;
+    }
+    else {
+        playerX.turn = true;
+        playerO.turn = false;
+    }
+}
+
+function checkWin(board, player) {
+
+}
