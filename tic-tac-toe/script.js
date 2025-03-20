@@ -14,8 +14,15 @@ const Gameboard = (function () {
     }
 })();
 
-const cells = document.querySelectorAll('.cell');
+let cells = document.querySelectorAll('.cell');
 const startBtn = document.querySelector('#startBtn');
+const restartBtn = document.querySelector('#restartBtn');
+const results = document.querySelector('#results');
+let playerXInput = document.querySelector('#playerX');
+let playerOInput = document.querySelector('#playerO');
+let playerXName = playerXInput.textContent;
+let playerOName = playerOInput.textContent;
+
 
 let winningCombinations = [
     [0, 1, 2],
@@ -42,51 +49,42 @@ let playerX = Player('Jane', 'X');
 let playerO = Player('John', 'O');;
 
 function startGame() {
-    if (playerX.turn) {
-        playerX.turn = false;
-        playerO.turn = true;
-    }
-    else {
-        playerX.turn = true;
-        playerO.turn = false;
-    }
-    let currentPlayer;
-    if (playerX.turn) {
-        currentPlayer = 'X';
-        cells.forEach(cell => {
-            cell.addEventListener('click', (e) => {
-                const index = cell.getAttribute('data-index');
-    
-                if (Gameboard.gameboard[index] === '') {
-                    Gameboard.gameboard[index] = currentPlayer;
-                    e.target.textContent = currentPlayer;
+    playerX.turn = !playerX.turn;
+    playerO.turn = !playerO.turn;
+    let currentPlayer = playerX.turn ? 'X' : 'O';
 
-                    const winner = checkWinner();
-                    endGame(winner);
+    cells.forEach(cell => {
+        cell.replaceWith(cell.cloneNode(true));
+    });
 
-                    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+    cells = document.querySelectorAll('.cell');
+
+    cells.forEach(cell => {
+        cell.addEventListener('click', (e) => {
+            const index = cell.getAttribute('data-index');
+
+            if (Gameboard.gameboard[index] === '') {
+                Gameboard.gameboard[index] = currentPlayer;
+                e.target.textContent = currentPlayer;
+
+                // to add X and O symbols in CSS
+                // e.target.classList.add('xImg');
+                // e.target.classList.add('OImg');
+                // currentPlayer = 'X' ? e.target.classList.add('xImg') : e.target.classList.add('OImg');
+
+                const winner = checkWinner();
+                endGame(winner);
+
+                if (!Gameboard.gameboard.includes('')) {
+                    restartGame();
+                    results.classList.add('showResults');
+                    results.textContent = 'No winner';
                 }
-            });
-        })
-    }
-    else if (playerO.turn) {
-        currentPlayer = 'O';
-        cells.forEach(cell => {
-            cell.addEventListener('click', (e) => {
-                const index = cell.getAttribute('data-index');
-    
-                if (Gameboard.gameboard[index] === '') {
-                    Gameboard.gameboard[index] = currentPlayer;
-                    e.target.textContent = currentPlayer;
 
-                    const winner = checkWinner();
-                    endGame(winner);
-
-                    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
-                }
-            });
-        })
-    }
+                currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+            }
+        });
+    })
 }
 
 startBtn.addEventListener('click', startGame);
@@ -105,9 +103,55 @@ function checkWinner() {
 
 function endGame(winner) {
     if (winner) {
-        console.log(`${winner} wins!`);
+        // only displays 'X' as the winner
+        // if (winner = "X") {
+        //     if (playerXName.textContent != '') {
+        //         console.log(`The winner is ${playerXName}`);
+        //         results.classList.add('showResults');
+        //         results.textContent = `${playerXName} wins! 🙌 🔥 \n
+        //         Good job!`;
+        //     }
+        //     else {
+        //         console.log(`${winner} wins!`);
+        //         results.classList.add('showResults');
+        //         results.textContent = `${winner} wins! 🙌 \n
+        //         Congratulations!`;
+        //     }
+        // }
+        // else{
+        //     if (playerOName.textContent != '') {
+        //         console.log(`The winner is ${playerOName}`);
+        //         results.classList.add('showResults');
+        //         results.textContent = `${playerOName} wins! 🙌 🔥 \n
+        //         Good job!`;
+        //     }
+        //     else {
+        //         console.log(`${winner} wins!`);
+        //         results.classList.add('showResults');
+        //         results.textContent = `${winner} wins! 🙌 \n
+        //         Congratulations!`;
+        //     }
+        // }
+        // console.log(`${winner} wins!`);
+        results.classList.add('showResults');
+        results.textContent = `${winner} wins! 🙌 \n
+        Congratulations!`; // \n not working
+        restartGame();
     }
     else {
         console.log('No winner yet.');
     }
 }
+
+function restartGame() {
+    Gameboard.gameboard.fill('');
+    cells.forEach(cell => {
+        cell.textContent = '';  
+    });
+    console.log('UI Cleared.');
+}
+
+restartBtn.addEventListener('click', restartGame);
+
+// allow players to put in their names. - working on
+// make X and Os nice looking - working on
