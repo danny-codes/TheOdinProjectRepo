@@ -27,6 +27,9 @@ h1 {
     margin: 7px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
 }
 
 .cell:hover {
@@ -54,12 +57,18 @@ h1 {
 }
 
 .showResults {
-    margin: 25px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    margin-top: 20px;
+    margin-bottom: 15px;
     text-align: center;
     font-size: 32px;
     border: 2px solid rgb(24, 24, 24);
     border-radius: 35px;
     padding: 10px;
+    width: fit-content;
+    align-self: center;
 }
 
 input {
@@ -80,6 +89,28 @@ label {
     font-size: 22px;
     color: #00ff88;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#playerXContainer, #playerOContainer {
+    flex: 1;
+}
+
+#playerXContainer {
+    text-align: left;
+}
+#playerOContainer {
+    text-align: right;
+}
+#players {
+    display: flex;
+    justify-content: space-between;
+}
+
+.xImg {
+    background-image: url(./images/yellow-x-symbol.svg.png);
+}
+.oImg {
+    background-image: url(./images/blue-o-symbol.png);
 }
 
 @font-face {
