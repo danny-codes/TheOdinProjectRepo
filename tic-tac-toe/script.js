@@ -20,9 +20,12 @@ const restartBtn = document.querySelector('#restartBtn');
 const results = document.querySelector('#results');
 let playerXInput = document.querySelector('#playerX');
 let playerOInput = document.querySelector('#playerO');
-let playerXName = playerXInput.textContent;
-let playerOName = playerOInput.textContent;
-
+let playerXName = playerXInput.value;
+let playerOName = playerOInput.value;
+let showDiv = false;
+let xImg = document.querySelectorAll('xImg');
+let oImg = document.querySelectorAll('oImg');
+// results.style.visibility = 'hidden';
 
 let winningCombinations = [
     [0, 1, 2],
@@ -65,12 +68,8 @@ function startGame() {
 
             if (Gameboard.gameboard[index] === '') {
                 Gameboard.gameboard[index] = currentPlayer;
-                e.target.textContent = currentPlayer;
 
-                // to add X and O symbols in CSS
-                // e.target.classList.add('xImg');
-                // e.target.classList.add('OImg');
-                // currentPlayer = 'X' ? e.target.classList.add('xImg') : e.target.classList.add('OImg');
+                e.target.classList.add(currentPlayer === 'X' ? 'xImg' : 'oImg');
 
                 const winner = checkWinner();
                 endGame(winner);
@@ -87,7 +86,13 @@ function startGame() {
     })
 }
 
-startBtn.addEventListener('click', startGame);
+startBtn.addEventListener('click', () => {
+    startGame();
+    results.classList.remove('showResults');
+    results.textContent = '';
+    playerXName = playerXInput.value;
+    playerOName = playerOInput.value;
+});
 
 function checkWinner() {
     const board = Gameboard.gameboard;
@@ -103,39 +108,23 @@ function checkWinner() {
 
 function endGame(winner) {
     if (winner) {
-        // only displays 'X' as the winner
-        // if (winner = "X") {
-        //     if (playerXName.textContent != '') {
-        //         console.log(`The winner is ${playerXName}`);
-        //         results.classList.add('showResults');
-        //         results.textContent = `${playerXName} wins! 🙌 🔥 \n
-        //         Good job!`;
-        //     }
-        //     else {
-        //         console.log(`${winner} wins!`);
-        //         results.classList.add('showResults');
-        //         results.textContent = `${winner} wins! 🙌 \n
-        //         Congratulations!`;
-        //     }
-        // }
-        // else{
-        //     if (playerOName.textContent != '') {
-        //         console.log(`The winner is ${playerOName}`);
-        //         results.classList.add('showResults');
-        //         results.textContent = `${playerOName} wins! 🙌 🔥 \n
-        //         Good job!`;
-        //     }
-        //     else {
-        //         console.log(`${winner} wins!`);
-        //         results.classList.add('showResults');
-        //         results.textContent = `${winner} wins! 🙌 \n
-        //         Congratulations!`;
-        //     }
-        // }
-        // console.log(`${winner} wins!`);
-        results.classList.add('showResults');
-        results.textContent = `${winner} wins! 🙌 \n
-        Congratulations!`; // \n not working
+
+        let winnerName = winner === "X" ? playerXName : playerOName;
+
+            if (winnerName !== '') {
+                console.log(`The winner is ${winnerName}`);
+                results.classList.add('showResults');
+                results.textContent = `${winnerName} wins! 🙌 🔥 \nGood job!`;
+            }
+            else {
+                console.log(`${winner} wins!`);
+                results.classList.add('showResults');
+                results.textContent = `${winner} wins! 🙌 \nCongratulations!`;
+            }
+        // results.classList.add('showResults');
+        results.style.whiteSpace = 'pre-line';
+        // showDiv = true;
+        // results.style.visibility = 'visible';
         restartGame();
     }
     else {
@@ -146,12 +135,19 @@ function endGame(winner) {
 function restartGame() {
     Gameboard.gameboard.fill('');
     cells.forEach(cell => {
-        cell.textContent = '';  
+        cell.textContent = '';
+        xImg.style.visibility = 'hidden';
+        oImg.style.visibility = 'hidden';
     });
     console.log('UI Cleared.');
 }
 
-restartBtn.addEventListener('click', restartGame);
+restartBtn.addEventListener('click', () => {
+    restartGame();
+    results.classList.remove('showResults');
+    results.textContent = '';
+    playerXName = playerXInput.value;
+    playerOName = playerOInput.value;
+});
 
-// allow players to put in their names. - working on
-// make X and Os nice looking - working on
+// remove X and O images after clicking start or restart button
