@@ -92,8 +92,8 @@ startBtn.addEventListener('click', () => {
     results.classList.remove('showResults');
     results.textContent = '';
     hideImages();
-    playerXName = playerXInput.value;
-    playerOName = playerOInput.value;
+    playerXInput.value = '';
+    playerOInput.value = '';
     playerXName = playerXInput.value;
     playerOName = playerOInput.value;
 });
