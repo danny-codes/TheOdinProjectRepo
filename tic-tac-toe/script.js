@@ -23,9 +23,8 @@ let playerOInput = document.querySelector('#playerO');
 let playerXName = playerXInput.value;
 let playerOName = playerOInput.value;
 let showDiv = false;
-let xImg = document.querySelectorAll('xImg');
-let oImg = document.querySelectorAll('oImg');
-// results.style.visibility = 'hidden';
+let xImg = document.querySelectorAll('.xImg');
+let oImg = document.querySelectorAll('.oImg');
 
 let winningCombinations = [
     [0, 1, 2],
@@ -51,6 +50,8 @@ let playerX = Player('Jane', 'X');
 
 let playerO = Player('John', 'O');;
 
+startGame();
+
 function startGame() {
     playerX.turn = !playerX.turn;
     playerO.turn = !playerO.turn;
@@ -69,7 +70,7 @@ function startGame() {
             if (Gameboard.gameboard[index] === '') {
                 Gameboard.gameboard[index] = currentPlayer;
 
-                e.target.classList.add(currentPlayer === 'X' ? 'xImg' : 'oImg');
+                e.target.classList.add(currentPlayer === 'X' ? 'xImg' : 'oImg');       
 
                 const winner = checkWinner();
                 endGame(winner);
@@ -90,6 +91,9 @@ startBtn.addEventListener('click', () => {
     startGame();
     results.classList.remove('showResults');
     results.textContent = '';
+    hideImages();
+    playerXName = playerXInput.value;
+    playerOName = playerOInput.value;
     playerXName = playerXInput.value;
     playerOName = playerOInput.value;
 });
@@ -104,6 +108,10 @@ function checkWinner() {
         }
     }
     return null;
+}
+
+function hideImages() {
+    cells.forEach(cell => cell.classList.remove('xImg', 'oImg'));
 }
 
 function endGame(winner) {
@@ -121,10 +129,7 @@ function endGame(winner) {
                 results.classList.add('showResults');
                 results.textContent = `${winner} wins! 🙌 \nCongratulations!`;
             }
-        // results.classList.add('showResults');
         results.style.whiteSpace = 'pre-line';
-        // showDiv = true;
-        // results.style.visibility = 'visible';
         restartGame();
     }
     else {
@@ -136,8 +141,6 @@ function restartGame() {
     Gameboard.gameboard.fill('');
     cells.forEach(cell => {
         cell.textContent = '';
-        xImg.style.visibility = 'hidden';
-        oImg.style.visibility = 'hidden';
     });
     console.log('UI Cleared.');
 }
@@ -146,8 +149,7 @@ restartBtn.addEventListener('click', () => {
     restartGame();
     results.classList.remove('showResults');
     results.textContent = '';
+    hideImages();
     playerXName = playerXInput.value;
     playerOName = playerOInput.value;
 });
-
-// remove X and O images after clicking start or restart button
