@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel='stylesheet' href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="./icons/view-dashboard.svg">
+                <p>Dashboard</p>
+            </div>
+            
+            <div id="list1">
+                <ul class="nav-items">
+                    <li><a href="#"><img src="./icons/home.svg">Home</a></li>
+                    <li><a href="#"><img src="./icons/card-account-details.svg">Profiles</a></li>
+                    <li><a href="#"><img src="./icons/message-reply.svg">Messages</a></li>
+                    <li><a href="#"><img src="./icons/clock-time-nine.svg">History</a></li>
+                    <li><a href="#"><img src="./icons/file-multiple.svg">Tasks</a></li>
+                    <li><a href="#"><img src="./icons/account-group.svg">Communities</a></li>
+                </ul>
+            </div>
+
+            <div id="list2">
+                <ul class="nav-items">
+                    <li><a href="#"><img src="./icons/cog.svg">Settings</a></li>
+                    <li><a href="#"><img src="./icons/help-box.svg">Support</a></li>
+                    <li><a href="#"><img src="./icons/shield-check.svg">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="search">
+                <form action="/search" id="search-form">
+                    <button type="button" id="search-icon">
+                        <img src="./icons/magnify.svg" alt="search" width="24" height="24">
+                    </button>
+                    <input type="text" id="search-input" name="query"/>
+                </form>
+            </div>
+            <div class="user-account">
+                <button id="ring-bell">
+                    <img src="./icons/bell-ring.svg" alt="bell" width='24' height="24">
+                </button>
+                <div class="avatar-container">
+                    <img src="./avatars/adventurer-1733534971524.png" alt="User Avatar" class="avatar">
+                </div>
+                <p>Daniel</p>
+            </div>
+
+            <div class="greet-user">
+                <div class="avatar-greet">
+                    <img src="./avatars/adventurer-1733534971524.png" alt="User Avatar" class="avatar1" width="80px" height="80px">
+                </div>
+                <p>Hi there,
+                    <br>
+                    <span>Daniel (@daniel)</span>
+                </p>
+            </div>
+
+            <div class="buttons">
+                <button class="u-action"><a href='#'>New</a></button>
+                <button class="u-action"><a href='#'>Upload</a></button>
+                <button class="u-action"><a href='#'>Share</a></button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <p class="projects-header">Your projects</p>
+            <div class="projects">
+                <div class="card">
+                    <h5>Super Cool Project</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="card-icons">
+                        <button class="icon-btn">
+                            <img src="./icons/star-plus-outline.svg" alt="Add to favorites" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/eye-plus-outline.svg" alt="Add to viewed" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/share-variant-outline.svg" alt="Share" class="icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5>Less Cool Project</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="card-icons">
+                        <button class="icon-btn">
+                            <img src="./icons/star-plus-outline.svg" alt="Add to favorites" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/eye-plus-outline.svg" alt="Add to viewed" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/share-variant-outline.svg" alt="Share" class="icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5>Impossible App</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="card-icons">
+                        <button class="icon-btn">
+                            <img src="./icons/star-plus-outline.svg" alt="Add to favorites" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/eye-plus-outline.svg" alt="Add to viewed" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/share-variant-outline.svg" alt="Share" class="icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5>Easy Peasy App</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="card-icons">
+                        <button class="icon-btn">
+                            <img src="./icons/star-plus-outline.svg" alt="Add to favorites" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/eye-plus-outline.svg" alt="Add to viewed" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/share-variant-outline.svg" alt="Share" class="icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5>Ad Blocker</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="card-icons">
+                        <button class="icon-btn">
+                            <img src="./icons/star-plus-outline.svg" alt="Add to favorites" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/eye-plus-outline.svg" alt="Add to viewed" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/share-variant-outline.svg" alt="Share" class="icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5>Money Maker</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="card-icons">
+                        <button class="icon-btn">
+                            <img src="./icons/star-plus-outline.svg" alt="Add to favorites" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/eye-plus-outline.svg" alt="Add to viewed" class="icon">
+                        </button>
+                        <button class="icon-btn">
+                            <img src="./icons/share-variant-outline.svg" alt="Share" class="icon">
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="announcements-container">
+                <h2>Announcements</h2>
+                <div class="announcements-wrapper">
+                    <div class="announcements">
+                        <div class="announce-card">
+                            <h5>Site Maintenance</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="announce-card">
+                            <h5>Site Maintenance</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="announce-card" id="last-announce-card">
+                            <h5>Site Maintenance</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <p class="trending-header">Trending</p> -->
+            <div class="trending-container">
+                <h2>Trending</h2>
+                <div class="trending-wrapper">
+                    <div class="trending">
+                        <div class="trending-card">
+                            <div class="trending-avatar">
+                                <img src="./avatars/adventurer-1733534976662.png" alt="User Avatar" class="avatar1" width="50px"
+                                    height="50px">
+                            </div>
+                            <p>@tegan, <br><span>World Peace Builder</span></p>
+                        </div>
+                        <div class="trending-card">
+                            <div class="trending-avatar">
+                                <img src="./avatars/adventurer-1733534982172.png" alt="User Avatar" class="avatar1" width="50px"
+                                    height="50px">
+                            </div>
+                            <p>@morgan, <br><span>Super Cool Project</span></p>
+                        </div>
+                        <div class="trending-card">
+                            <div class="trending-avatar">
+                                <img src="./avatars/adventurer-1733534991498.png" alt="User Avatar" class="avatar1" width="50px"
+                                    height="50px">
+                            </div>
+                            <p>@kendall, <br><span>Life Changing App</span></p>
+                        </div>
+                        <div class="trending-card">
+                            <div class="trending-avatar">
+                                <img src="./avatars/adventurer-1733535000210.png" alt="User Avatar" class="avatar1" width="50px"
+                                    height="50px">
+                            </div>
+                            <p>@alex, <br><span>No Traffic Maker</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('search-icon').addEventListener('click', function() {
+            document.getElementById('search-input').focus();
+        });
+    </script>
+</body>
+</html>

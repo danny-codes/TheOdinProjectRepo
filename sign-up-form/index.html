@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up form</title>
+    <link rel="stylesheet" href='styles.css'>
+    <script src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left">
+            <div class="for-image">
+                <img src="./images/dan-logo.png" alt="my logo" height="80px" style="margin-top: 6px;">
+                <!--h1 style="margin-left: 50px;">LOGO</!--h1-->
+                <!--div class="semi-transparent">
+                    <img src="./images/dan-high-resolution-logo-transparent.png" alt="my logo" height="50px">
+                </!--div-->
+            </div>
+            <div class="for-footer">
+                <footer>Photo by <a href="https://unsplash.com/@haliewestphoto">Halie West </a>on <a href='https://unsplash.com/'>Unsplash</a></footer>
+            </div>
+        </div>
+        <div class="right">
+            <div class="first">
+                <h3 style="font-weight: 600;">
+                    Hey! This is not a real online service!
+                    You know that you need something like 
+                    this in your life. <Br>
+                    Sign up <em>now</em> to get started on this fun adventure!
+                    <br><br>
+                    You <em>know</em> that you want to.
+                </h3>
+            </div>
+            <div class="second">
+                <h3 style='margin-left: 5%'>Let's do this!</h3>
+
+                <form id='userForm' action="#" method="post" class="form-main-div">
+
+                    <div class="form-divs">
+                        <div class="form-div">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="first_name" required>
+                        </div>
+                        <div class="form-div">
+                            <label for="userEmail">Email</label>
+                            <input type="email" id="userEmail" name="email" required>
+                        </div>
+                        <div class="form-div">
+                            <label for="userPassword">Password</label>
+                            <input type="password" id="userPassword" name="password" required minlength="8" maxlength="30">
+                        </div>
+                    </div>
+
+                    <div class="form-divs">
+                        <div class="form-div">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="last_name" required>
+                        </div>
+                        <div class="form-div">
+                            <label for="userPhone">Phone Number</label>
+                            <input type="tel" id="userPhone" name="phoneNumber" required>
+                        </div>
+                        <div class="form-div">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="third">
+                <button class="btn btn-green" id='createAccountBtn' type="submit" form="userForm">Create Account</button>
+                <div class="hyperLink">
+                    <p style="margin-left: 3%;">Already have an account? <a class='green-link' href='#'>Log in</a></p>
+                </div>
+            </div>
+
+        </div>
+</body>
+</html>
