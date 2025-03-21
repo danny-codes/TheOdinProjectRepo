@@ -94,8 +94,6 @@ startBtn.addEventListener('click', () => {
     hideImages();
     playerXInput.value = '';
     playerOInput.value = '';
-    playerXName = playerXInput.value;
-    playerOName = playerOInput.value;
 });
 
 function checkWinner() {
@@ -116,6 +114,9 @@ function hideImages() {
 
 function endGame(winner) {
     if (winner) {
+
+        playerXName = playerXInput.value;
+        playerOName = playerOInput.value;
 
         let winnerName = winner === "X" ? playerXName : playerOName;
 
