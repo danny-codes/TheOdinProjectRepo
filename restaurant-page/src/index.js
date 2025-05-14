@@ -1,5 +1,5 @@
 import './styles.css';
-import { load } from './content';
+import { load } from './home';
 document.addEventListener('DOMContentLoaded', () => {
     load();
 })
