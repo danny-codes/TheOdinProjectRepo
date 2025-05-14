@@ -35,7 +35,7 @@ nav button:hover {
     cursor: pointer;
 }
 
-#selected {
+.selected {
     color: rgb(212, 181, 136);
     cursor: pointer;
 }
