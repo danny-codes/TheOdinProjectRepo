@@ -9,7 +9,4 @@ export function load() {
     let pClosing = document.createElement('p')
     pClosing.textContent = 'Come with your coder friends & enjoy spaghetti code together';
     div.appendChild(pClosing);
-    let menuBtn = document.createElement('button');
-    menuBtn.textContent = 'Explore our GOATed menu';
-    div.appendChild(menuBtn);
 }
