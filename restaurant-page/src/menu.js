@@ -2,8 +2,8 @@ export function loadMenu() {
     const div = document.querySelector('#content');
 
     div.innerHTML = `
-    <h1 style='text-align: center;'>Our Menu</h1>
-    <ul>
+    <h1 class='header' style='text-align: center;'>Our Menu</h1>
+    <ul class='menu'>
     <li><strong>Console Coffee</strong> – Debug your brain with a bold espresso.</li>
     <li><strong>Syntax Latte</strong> – Smooth vanilla latte with extra semicolons.</li>
     <li><strong>DOM Mocha</strong> – Dark chocolate meets steamed milk and code.</li>
