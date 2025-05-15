@@ -6,15 +6,16 @@ const newBookBtn = document.querySelector('#new-book');
 const bookForm = document.querySelector('#book-form');
 const addBookBtn = document.querySelector('#add-book');
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-Book.prototype.info = function() {
-    return `${title} by ${author}, ${pages} pages, ${read ? 'read' : 'not read yet'}`;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;   
+    }
+    info() {
+        return `${title} by ${author}, ${pages} pages, ${read ? 'read' : 'not read yet'}`;
+    }
 }
 
 function addBookToLibrary(title, author, pages, read) {
