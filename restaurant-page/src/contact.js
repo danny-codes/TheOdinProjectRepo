@@ -2,7 +2,7 @@ export function contactLoad() {
     const div = document.querySelector('#content');
 
     div.innerHTML = `
-    <h1 style="text-align:center;">Contact Us</h1>
+    <h1 class='header' style="text-align:center;">Contact Us</h1>
     <p>Have questions, feedback, or feature requests?<br>
     We’d love to hear from you.</p>
 
