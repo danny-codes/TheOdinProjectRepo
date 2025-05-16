@@ -3,7 +3,7 @@ export function loadMenu() {
 
     div.innerHTML = `
     <h1 class='header' style='text-align: center;'>Our Menu</h1>
-    <ul class='menu'>
+    <ul class='main-part'>
     <li><strong>Console Coffee</strong> – Debug your brain with a bold espresso.</li>
     <li><strong>Syntax Latte</strong> – Smooth vanilla latte with extra semicolons.</li>
     <li><strong>DOM Mocha</strong> – Dark chocolate meets steamed milk and code.</li>
