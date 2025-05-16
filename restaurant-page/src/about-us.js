@@ -2,7 +2,7 @@ export function loadAboutUs() {
     const div = document.querySelector('#content');
     div.innerHTML = `
     <h1 class='header' style="text-align: center;">About Us</h1>
-    <p>
+    <p class='main-part'>
     Welcome to <strong>The DOM Café</strong> — where the JavaScript flows as smoothly as the coffee. 
     We’re a cozy virtual spot built by devs, for devs. Whether you’re debugging over a dark roast 
     or brainstorming your next big idea over a matcha latte, we’ve got the perfect table for you.
