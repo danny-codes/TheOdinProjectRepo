@@ -3,6 +3,7 @@ export function contactLoad() {
 
     div.innerHTML = `
     <h1 class='header' style="text-align:center;">Contact Us</h1>
+    <div class='main-part'>
     <p>Have questions, feedback, or feature requests?<br>
     We’d love to hear from you.</p>
 
@@ -12,5 +13,6 @@ export function contactLoad() {
 
     <p>Open daily from <strong>08:00</strong> to <strong>22:00</strong>.<br>
     Come grab a byte!</p>
+    </div>
     `;
 }
