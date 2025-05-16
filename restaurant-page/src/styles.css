@@ -87,6 +87,10 @@ footer img {
     margin-bottom: auto;
 }
 
+.main-part {
+    margin-bottom: 300px;
+}
+
 #content p {
     font-size: 16px;
 }
