@@ -16,9 +16,11 @@ class Todo {
 }
 
 class Project {
+    static instances = [];
     constructor(name) {
         this.name = name;
         this.todos = [];
+        Project.instances.push(this);
     }
 
     addTodo(todo) {
