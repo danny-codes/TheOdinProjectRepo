@@ -1,28 +1,43 @@
 export { Project, defaultProject, createNewProject, createNewTodo, Todo };
 
-class Project {
-    constructor(type) {
-        this.type = type;
-    }
-}
-
-let defaultProject = new Project('default');
-
-function createNewProject() {
-
-};
-
-function createNewTodo() {
-
-};
-
-class Todo extends Project{
-    constructor(title, description, dueDate, priority, difficulty, notes){
+class Todo {
+    constructor(title, description, dueDate, priority, notes = ''){
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.difficulty = difficulty;
         this.notes = notes;
+        this.complete = false;
+    }
+
+    toggleComplete () {
+        this.complete = !this.complete;
     }
 }
+
+class Project {
+    constructor(name) {
+        this.name = name;
+        this.todos = [];
+    }
+
+    addTodo(todo) {
+        this.todos.push(todo);
+    }
+
+    removeTodo(index) {
+        this.todos.splice(index, 1)
+    }
+}
+
+const defaultProject = new Project('Default');
+const todo1 = new Todo('Clean your room', 'Vacuum, organize desk', '2025-06-01', 'high');
+defaultProject.addTodo(todo1);
+
+function createNewProject(name, ) {
+    return new Project(name)
+};
+
+function createNewTodo(title, description, dueDate, priority) {
+    return new Todo(title, description, dueDate, priority);
+};
