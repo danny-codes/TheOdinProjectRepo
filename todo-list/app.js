@@ -1,4 +1,4 @@
-export { Project, defaultProject, createNewProject, renderProject, createNewTodo, Todo };
+export { Project, defaultProject, createNewProject, createNewTodo, Todo };
 
 class Project {
     constructor(type) {
@@ -9,10 +9,6 @@ class Project {
 let defaultProject = new Project('default');
 
 function createNewProject() {
-
-};
-
-function renderProject() {
 
 };
 
