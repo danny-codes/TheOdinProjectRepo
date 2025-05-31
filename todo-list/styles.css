@@ -4,24 +4,27 @@ body {
     height: 100vh;
     width: 100vw;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background-color: rgb(85, 208, 112);
-    height: 10%;
+    height: 65px;
 }
 
 nav {
     display: flex;
-    gap: calc(50vw);
-    /* justify-content: center; for #buttons */
+    justify-content: space-between;
+    align-items: center;
     padding: 15px;
+    padding: 0 20px;
+    height: 100%;
 }
 
 nav div button {
     all: unset;
     cursor: pointer;
-    /* font-size: 20px; */
     background-color: hsla(0, 0%, 100%, 0.738);
     border-radius: 15px;
     padding: 5px;
@@ -33,9 +36,10 @@ nav div button {
 }
 
 #logoDiv {
+    display: flex;
+    align-items: center;
     font-size: 25px;
     font-weight: 600;
-    /* color: white; uncomment when logo is aligned */
 }
 
 #buttons {
@@ -44,15 +48,16 @@ nav div button {
     justify-self: center;
 }
 
-/* footer {
+footer {
     margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    font-size: 32px;
-    height: 12vh;
-} */
+    font-size: 16px;
+    height: 8vh;
+    background-color: #eee;
+}
 
 @font-face {
     font-family: 'Poppins';
