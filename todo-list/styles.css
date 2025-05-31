@@ -48,6 +48,38 @@ nav div button {
     justify-self: center;
 }
 
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.projectDiv {
+    display: flex;
+    align-items: center;
+    height: 125px;
+    width: 250px;
+    /* margin: 0 auto; */
+    margin: 50px auto;
+    background-color: rgb(171, 228, 105);
+    border-radius: 25px;
+}
+
+.projectDiv:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    border-color: blueviolet;
+    border: 5px solid hsla(155, 100%, 19%, 0.657);
+}
+
+.projectName {
+    font-size: 1.1em;
+    width: 100%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
 footer {
     margin-top: auto;
     display: flex;
