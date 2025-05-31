@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="styles.css">
-    <script href="script.js"></script>
+    <script defer src="index.js" type="module"></script>
 </head>
 <body>
-
+    <header>
+        <nav>
+            <div id="logoDiv">
+                <p>todoist</p>
+            </div>
+            <div id="buttons">
+                <button id="aboutBtn">About</button>
+                <button id="projectsBtn">Projects</button>
+            </div>
+        </nav>
+    </header>
+    <div id="content"></div>
+    <footer>
+        <p>Todo list by <a href="https://github.com/danny-codes" target="_blank" rel="noopener noreferrer">daniel codes</a></p>
+    </footer>
 </body>
 </html>
