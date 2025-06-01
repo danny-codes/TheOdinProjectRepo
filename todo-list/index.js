@@ -1,4 +1,5 @@
 import { Project, defaultProject, createNewProject, createNewTodo, Todo } from "./app.js";
+import {renderAbout} from './about.js';
 
 // DOM stuff
 
@@ -22,9 +23,15 @@ function renderProjects() {
 
     content.appendChild(header);
 
-    Project.instances.forEach(instance => {
+    let addBtn = document.createElement('button');
+    addBtn.classList.add('addBtn');
+    addBtn.textContent = 'Add project';
+    content.appendChild(addBtn);
+
+    Project.instances.forEach((instance, index) => {
         let div = document.createElement('div');
         div.classList.add('projectDiv');
+        div.setAttribute('data-index', index);
 
         let nameP = document.createElement('p');
         let projectText = instance.name;
@@ -48,5 +55,22 @@ function clearContent() {
     let content = document.querySelector('#content');
     content.replaceChildren();
 }
+
+let aboutBtn = document.querySelector('#aboutBtn');
+aboutBtn.addEventListener('click', () => {
+    clearContent();
+    renderAbout();
+});
+
+let projectsBtn = document.querySelector('#projectsBtn');
+projectsBtn.addEventListener('click', () => {
+    clearContent();
+    renderProjects();
+});
+
+function addNewProject(){};
+
+let addBtn = document.querySelector('.addBtn');
+addBtn.addEventListener('click', addNewProject());
 
 function renderTodos() {}
