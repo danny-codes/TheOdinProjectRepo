@@ -81,6 +81,35 @@ nav div button {
     color: rgb(0, 0, 0);
 }
 
+.todoDiv {
+    display: flex;
+    align-items: center;
+    height: 125px;
+    width: 250px;
+    /* margin: 0 auto; */
+    margin: 40px auto 2px auto;
+    background-color: rgb(171, 228, 105);
+    border-radius: 25px;
+}
+
+.todoDiv:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    border-color: blueviolet;
+    border: 5px solid hsla(155, 100%, 19%, 0.657);
+}
+
+.todoName {
+    font-size: 1.1em;
+    width: 100%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.todoDue {
+    /* */
+}
+
 .addBtn {
     all: unset;
     cursor: pointer;
