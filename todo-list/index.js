@@ -8,6 +8,8 @@ console.log(defaultProject.todos);
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     addProjectListeners();
+    let addBtn = document.querySelector('.addBtn');
+    addBtn.addEventListener('click', addNewProject);
 });
 
 function renderProjects() {
@@ -38,11 +40,11 @@ function renderProjects() {
         nameP.textContent = projectText;
         nameP.classList.add("projectName");
 
+        div.style.backgroundColor = instance.color;
+
         content.appendChild(div);
         div.appendChild(nameP);
     });
-    // 
-    //
 }
 
 function addProjectListeners() {
@@ -66,11 +68,46 @@ let projectsBtn = document.querySelector('#projectsBtn');
 projectsBtn.addEventListener('click', () => {
     clearContent();
     renderProjects();
+    addProjectListeners();
 });
 
-function addNewProject(){};
+function addNewProject(){
+    let content = document.querySelector("#content");
+    // create the div and the inputs and confirm button
+    let div = document.createElement("div");
+    div.classList.add("addProjectDiv");
+    // div.setAttribute("data-index", index);
+    let input = document.createElement('input');
+    let name = input.value;
 
-let addBtn = document.querySelector('.addBtn');
-addBtn.addEventListener('click', addNewProject());
+    let colorPicker = document.createElement('input');
+    colorPicker.type = 'color';
+    colorPicker.value = '#ff0000';
 
-function renderTodos() {}
+    let button = document.createElement('button');
+    button.classList.add('createBtn');
+    button.textContent = 'Create';
+
+    button.addEventListener('click', createProject);
+    function createProject() {
+        const name = input.value.trim();
+        const colorValue = colorPicker.value;
+
+        if (!name) return;
+
+        createNewProject(name, colorValue);
+        clearContent();
+        renderProjects();
+        addProjectListeners();
+        colorPicker.blur();
+    }
+
+    div.appendChild(input);
+    div.append(colorPicker);
+    div.appendChild(button);
+    content.appendChild(div);
+};
+
+function renderTodos() {
+
+};
