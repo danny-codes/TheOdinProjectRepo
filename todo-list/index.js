@@ -8,9 +8,13 @@ console.log(defaultProject.todos);
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     addProjectListeners();
+    addProjectButtonListener();
+});
+
+function addProjectButtonListener() {
     let addBtn = document.querySelector('.addBtn');
     addBtn.addEventListener('click', addNewProject);
-});
+}
 
 function renderProjects() {
     // for each Project instance, create div,
@@ -45,13 +49,17 @@ function renderProjects() {
         content.appendChild(div);
         div.appendChild(nameP);
     });
+    addProjectButtonListener();
 }
 
 function addProjectListeners() {
     document.querySelectorAll(".projectDiv").forEach((project) => {
-    project.addEventListener("click", clearContent);
+    project.addEventListener("click", function(e) {
+        clearContent();
+        const index = e.currentTarget.getAttribute('data-index');
+        renderTodos(index);
     });
-}
+})};
 
 function clearContent() {
     let content = document.querySelector('#content');
@@ -69,6 +77,8 @@ projectsBtn.addEventListener('click', () => {
     clearContent();
     renderProjects();
     addProjectListeners();
+    let addBtn = document.querySelector('.addBtn');
+    addBtn.addEventListener('click', addNewProject);
 });
 
 function addNewProject(){
@@ -108,6 +118,50 @@ function addNewProject(){
     content.appendChild(div);
 };
 
-function renderTodos() {
+function renderTodos(index) {
+    const project = Project.instances[index];
+    let content = document.querySelector('#content');
 
+    let header = document.createElement('h1');
+    header.textContent = `Your ${project.name} project's todos`;
+    header.classList.add('projectHeader');
+
+    content.appendChild(header);
+
+    let addBtn = document.createElement('button');
+    addBtn.classList.add('addBtn');
+    addBtn.textContent = 'Add todo';
+    content.appendChild(addBtn);
+
+    project.todos.forEach((todo, index) => {
+        let div = document.createElement("div");
+        div.classList.add("todoDiv");
+        div.setAttribute("data-index", index);
+
+        switch (todo.priority) {
+            case 'high':
+                div.style.backgroundColor = 'red';
+                break;
+            case 'medium':
+                div.style.backgroundColor = 'orange';
+                break;
+            case 'low':
+                div.style.backgroundColor = 'green';
+                BroadcastChannel;
+            default:
+                div.style.backgroundColor = 'gray';
+        }
+
+        let name = document.createElement("p");
+        name.textContent = todo.title
+        name.classList.add("todoName");
+
+        let duedate = document.createElement('p');
+        duedate.textContent = `Due: ${todo.dueDate}`;
+        duedate.classList.add('todoDue');
+
+        content.appendChild(div);
+        div.appendChild(name);
+        div.appendChild(duedate);
+    });
 };
