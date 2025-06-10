@@ -62,7 +62,7 @@ nav div button {
     height: 125px;
     width: 250px;
     /* margin: 0 auto; */
-    margin: 50px auto;
+    margin: 40px auto 2px auto;
     background-color: rgb(171, 228, 105);
     border-radius: 25px;
 }
@@ -82,6 +82,31 @@ nav div button {
 }
 
 .addBtn {
+    all: unset;
+    cursor: pointer;
+    background-color: hsla(0, 0%, 100%, 0.738);
+    border-radius: 15px;
+    padding: 5px;
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+.addProjectDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 250px;
+    /* margin: 0 auto; */
+    margin: 40px auto 2px auto;
+    background-color: rgb(228, 167, 105);
+    border-radius: 25px;
+}
+
+.createBtn {
     all: unset;
     cursor: pointer;
     background-color: hsla(0, 0%, 100%, 0.738);
