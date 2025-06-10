@@ -17,8 +17,9 @@ class Todo {
 
 class Project {
     static instances = [];
-    constructor(name) {
+    constructor(name, color) {
         this.name = name;
+        this.color = color;
         this.todos = [];
         Project.instances.push(this);
     }
@@ -35,9 +36,10 @@ class Project {
 const defaultProject = new Project('Default');
 const todo1 = new Todo('Clean your room', 'Vacuum, organize desk', '2025-06-01', 'high');
 defaultProject.addTodo(todo1);
+// const testProject = new Project('Test');
 
-function createNewProject(name, ) {
-    return new Project(name)
+function createNewProject(name, color) {
+    return new Project(name, color);
 };
 
 function createNewTodo(title, description, dueDate, priority) {
