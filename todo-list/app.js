@@ -46,6 +46,6 @@ function createNewProject(name, color) {
     return new Project(name, color);
 };
 
-function createNewTodo(title, description, dueDate, priority) {
-    return new Todo(title, description, dueDate, priority);
+function createNewTodo(title, description, dueDate, priority, notes = '') {
+    return new Todo(title, description, dueDate, priority, notes);
 };
