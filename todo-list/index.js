@@ -180,6 +180,7 @@ function renderTodos(index) {
         div.appendChild(duedate);
     });
     addTodoButtonListener(index);
+    todoListeners(index);
 };
 
 function openTodoCreateModal() {
@@ -239,4 +240,42 @@ function createTodoButtonListener(index) {
     newCreate.addEventListener("click", () => addNewTodo(index));
 }
 
-createTodoButtonListener();
+function todoListeners(projectIndex) {
+    document.querySelectorAll(".todoDiv").forEach((project) => {
+    project.addEventListener("click", function(e) {
+        const todoIndex = parseInt(e.currentTarget.getAttribute('data-index'), 10);
+        expandTodo(projectIndex, todoIndex);
+    });
+})};
+
+function expandTodo(projectIndex, todoIndex) {
+    const project = Project.instances[projectIndex];
+    const todo = project.todos[todoIndex];
+
+    document.getElementById('todoName').value = todo.title;
+    document.getElementById('description').value = todo.description;
+    document.getElementById('duedate').value = todo.dueDate;
+    document.getElementById('priority').value = todo.priority;
+    document.getElementById('notes').value = todo.notes;
+
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+
+    let oldButton = document.querySelector('#createTodo');
+    const newButton = oldButton.cloneNode(true);
+    oldButton.replaceWith(newButton);
+
+    newButton.addEventListener('click', function(e) {
+        todo.title = document.getElementById('todoName').value;
+        todo.description = document.getElementById('description').value;
+        todo.dueDate = document.getElementById('duedate').value;
+        todo.priority = document.getElementById('priority').value;
+        todo.notes = document.getElementById('notes').value;
+
+        // close modal
+        modal.classList.add("hidden");
+        overlay.classList.add("hidden");
+
+        renderTodos(projectIndex);
+    });
+}
