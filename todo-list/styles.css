@@ -61,7 +61,6 @@ nav div button {
     align-items: center;
     height: 125px;
     width: 250px;
-    /* margin: 0 auto; */
     margin: 40px auto 2px auto;
     background-color: rgb(171, 228, 105);
     border-radius: 25px;
@@ -87,7 +86,6 @@ nav div button {
     align-items: center;
     height: 125px;
     width: 250px;
-    /* margin: 0 auto; */
     margin: 40px auto 2px auto;
     background-color: rgb(171, 228, 105);
     border-radius: 25px;
@@ -108,7 +106,7 @@ nav div button {
 }
 
 .todoDue {
-    /* */
+    margin-right: 15px;
 }
 
 .addProject {
@@ -189,8 +187,6 @@ nav div button {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     z-index: 10;
-    /* height: 40%; */
-    /* width: 50%; */
     height: 400px;
     width: 300px;
 }
@@ -216,7 +212,7 @@ nav div button {
     margin-left: -2rem;
     margin-left: -2rem;
     margin-right: -2rem;
-    margin-bottom: -2rem; /* push it down to cancel modal padding bottom */
+    margin-bottom: -2rem;
     box-sizing: border-box;
     display: flex;
     margin-top: auto;
@@ -228,10 +224,8 @@ nav div button {
 }
 
 #modalActionBar button {
-    /* margin: 5px 5px 5px 5px; */
     all: unset;
     cursor: pointer;
-    /* background-color: hsla(0, 0%, 100%, 0.738); */
     background-color: hsl(81, 100%, 50%);
     border-radius: 12px;
     font-size: 14px;
@@ -245,6 +239,28 @@ nav div button {
 }
 
 #modalActionBar button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    border-color: blueviolet;
+    border: 1px solid hsla(155, 100%, 19%, 0.657);
+}
+
+#modalActionBar .deleteBtn {
+    all: unset;
+    cursor: pointer;
+    background-color: hsl(0, 77%, 68%);
+    border-radius: 12px;
+    font-size: 14px;
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    width: 50px;
+    height: 50%;
+    text-align: center;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+#modalActionBar .deleteBtn:hover {
     cursor: pointer;
     transform: scale(1.02);
     border-color: blueviolet;
