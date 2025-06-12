@@ -12,8 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addProjectButtonListener() {
-    let addBtn = document.querySelector('.addBtn');
-    addBtn.addEventListener('click', addNewProject);
+    let addProject = document.querySelector('.addProject');
+    addProject.addEventListener('click', addNewProject);
+}
+
+function addTodoButtonListener() {
+    let addTodo = document.querySelector('.addTodo');
+    addTodo.addEventListener('click', addNewTodo);
 }
 
 function renderProjects() {
@@ -29,10 +34,10 @@ function renderProjects() {
 
     content.appendChild(header);
 
-    let addBtn = document.createElement('button');
-    addBtn.classList.add('addBtn');
-    addBtn.textContent = 'Add project';
-    content.appendChild(addBtn);
+    let addProject = document.createElement('button');
+    addProject.classList.add('addProject');
+    addProject.textContent = 'Add project';
+    content.appendChild(addProject);
 
     Project.instances.forEach((instance, index) => {
         let div = document.createElement('div');
@@ -77,8 +82,8 @@ projectsBtn.addEventListener('click', () => {
     clearContent();
     renderProjects();
     addProjectListeners();
-    let addBtn = document.querySelector('.addBtn');
-    addBtn.addEventListener('click', addNewProject);
+    let addProject = document.querySelector('.addProject');
+    addProject.addEventListener('click', addNewProject);
 });
 
 function addNewProject(){
@@ -86,7 +91,6 @@ function addNewProject(){
     // create the div and the inputs and confirm button
     let div = document.createElement("div");
     div.classList.add("addProjectDiv");
-    // div.setAttribute("data-index", index);
     let input = document.createElement('input');
     let name = input.value;
 
@@ -111,7 +115,7 @@ function addNewProject(){
         addProjectListeners();
         colorPicker.blur();
     }
-
+    
     div.appendChild(input);
     div.append(colorPicker);
     div.appendChild(button);
@@ -123,15 +127,15 @@ function renderTodos(index) {
     let content = document.querySelector('#content');
 
     let header = document.createElement('h1');
-    header.textContent = `Your ${project.name} project's todos`;
+    header.textContent = `${project.name} project's todos`;
     header.classList.add('projectHeader');
 
     content.appendChild(header);
 
-    let addBtn = document.createElement('button');
-    addBtn.classList.add('addBtn');
-    addBtn.textContent = 'Add todo';
-    content.appendChild(addBtn);
+    let addTodo = document.createElement('button');
+    addTodo.classList.add('addTodo');
+    addTodo.textContent = 'Add todo';
+    content.appendChild(addTodo);
 
     project.todos.forEach((todo, index) => {
         let div = document.createElement("div");
@@ -164,4 +168,25 @@ function renderTodos(index) {
         div.appendChild(name);
         div.appendChild(duedate);
     });
+    addTodoButtonListener();
+    // addTodo.addEventListener("click", () => {
+    //     modal.classList.remove("hidden");
+    //     overlay.classList.remove("hidden");
+    // });
 };
+
+function addNewTodo() {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+};
+
+// Modal stuff
+
+const closeBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+const overlay = document.getElementById('overlay');
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
