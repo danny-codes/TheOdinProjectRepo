@@ -278,4 +278,16 @@ function expandTodo(projectIndex, todoIndex) {
 
         renderTodos(projectIndex);
     });
+    let modalActionBar = document.querySelector('#modalActionBar');
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('deleteBtn');
+    modalActionBar.appendChild(deleteBtn);
+    deleteBtn.addEventListener('click', function(e) {
+        project.removeTodo(todoIndex);
+        renderTodos(projectIndex);
+        // close modal
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
 }
