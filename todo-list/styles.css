@@ -332,6 +332,15 @@ input[type="checkbox"]:hover {
     border-color: #2196f3;
 }
 
+.aboutText {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+
 footer {
     margin-top: auto;
     display: flex;
