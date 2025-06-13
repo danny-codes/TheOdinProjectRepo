@@ -1,13 +1,13 @@
 export { Project, defaultProject, createNewProject, createNewTodo, Todo };
 
 class Todo {
-    constructor(title, description, dueDate, priority, notes = ''){
+    constructor(title, description, dueDate, priority, notes = '', complete){
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
         this.notes = notes;
-        this.complete = false;
+        this.complete = complete;
     }
 
     toggleComplete () {
@@ -39,6 +39,6 @@ function createNewProject(name, color) {
     return new Project(name, color);
 };
 
-function createNewTodo(title, description, dueDate, priority, notes = '') {
-    return new Todo(title, description, dueDate, priority, notes);
+function createNewTodo(title, description, dueDate, priority, notes = '', complete) {
+    return new Todo(title, description, dueDate, priority, notes, complete);
 };
