@@ -34,13 +34,6 @@ class Project {
 }
 
 const defaultProject = new Project('Default');
-const todo1 = new Todo('Clean your room', 'Vacuum, organize desk', '2025-06-01', 'high');
-const todo2 = new Todo("Wash dishes", "Scrub well", "2025-07-01", "low");
-const todo3 = new Todo("Do laundry", "Separate colors", "2025-07-03", "medium");
-defaultProject.addTodo(todo1);
-defaultProject.addTodo(todo2);
-defaultProject.addTodo(todo3);
-// const testProject = new Project('Test');
 
 function createNewProject(name, color) {
     return new Project(name, color);
