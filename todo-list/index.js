@@ -132,6 +132,7 @@ function renderTodos(index) {
     clearContent();
 
     const project = Project.instances[index];
+
     console.log("Project.instances:", Project.instances);
     console.log("index:", index);
 
@@ -175,9 +176,15 @@ function renderTodos(index) {
         duedate.textContent = `Due: ${todo.dueDate}`;
         duedate.classList.add('todoDue');
 
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.classList.add('todoCheckbox');
+        checkbox.checked = todo.complete;
+
         content.appendChild(div);
         div.appendChild(name);
         div.appendChild(duedate);
+        div.appendChild(checkbox);
     });
     addTodoButtonListener(index);
     todoListeners(index);
@@ -207,12 +214,15 @@ function addNewTodo(index) {
     let duedate = document.getElementById('duedate');
     let priority = document.getElementById('priority');
     let notes = document.getElementById("notes");
+    let checkbox = document.getElementById('modalCheckbox');
+    // checkbox here
     let newTodo = createNewTodo(
         todoName.value,
         description.value,
         duedate.value,
         priority.value,
-        notes.value
+        notes.value,
+        checkbox.checked
     );
     project.addTodo(newTodo);
     
@@ -244,6 +254,16 @@ function todoListeners(projectIndex) {
     document.querySelectorAll(".todoDiv").forEach((project) => {
     project.addEventListener("click", function(e) {
         const todoIndex = parseInt(e.currentTarget.getAttribute('data-index'), 10);
+        const project = Project.instances[projectIndex];
+        const todo = project.todos[todoIndex];
+        if (e.target.tagName.toLowerCase() === 'input' && e.target.type === 'checkbox') {
+            if (e.target.checked) {
+                todo.complete = true;
+            } else {
+                todo.complete = false;
+            }
+            return;
+        }
         expandTodo(projectIndex, todoIndex);
     });
 })};
@@ -251,12 +271,19 @@ function todoListeners(projectIndex) {
 function expandTodo(projectIndex, todoIndex) {
     const project = Project.instances[projectIndex];
     const todo = project.todos[todoIndex];
-
+    
     document.getElementById('todoName').value = todo.title;
     document.getElementById('description').value = todo.description;
     document.getElementById('duedate').value = todo.dueDate;
     document.getElementById('priority').value = todo.priority;
     document.getElementById('notes').value = todo.notes;
+    const modalCheckbox = document.getElementById('modalCheckbox');
+    modalCheckbox.checked = todo.complete;
+    
+    modalCheckbox.onchange = (e) => {
+        todo.complete = e.target.checked;
+        renderTodos(projectIndex);
+    }
 
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
@@ -271,6 +298,7 @@ function expandTodo(projectIndex, todoIndex) {
         todo.dueDate = document.getElementById('duedate').value;
         todo.priority = document.getElementById('priority').value;
         todo.notes = document.getElementById('notes').value;
+        todo.complete = modalCheckbox.checked;
 
         // close modal
         modal.classList.add("hidden");
