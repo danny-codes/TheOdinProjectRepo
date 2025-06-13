@@ -1,5 +1,6 @@
 import { Project, defaultProject, createNewProject, createNewTodo, Todo } from "./app.js";
 import {renderAbout} from './about.js';
+import '../styles/styles.css';
 
 // DOM stuff
 
