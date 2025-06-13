@@ -156,16 +156,16 @@ function renderTodos(index) {
 
         switch (todo.priority) {
             case 'high':
-                div.style.backgroundColor = 'red';
+                div.style.backgroundColor = '#ff3333';
                 break;
             case 'medium':
-                div.style.backgroundColor = 'orange';
+                div.style.backgroundColor = '#f5872e';
                 break;
             case 'low':
-                div.style.backgroundColor = 'green';
+                div.style.backgroundColor = '#38dc28';
                 break;
             default:
-                div.style.backgroundColor = 'gray';
+                div.style.backgroundColor = '#828881';
         }
 
         let name = document.createElement("p");
