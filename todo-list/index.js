@@ -283,7 +283,10 @@ function expandTodo(projectIndex, todoIndex) {
     deleteBtn.textContent = 'Delete';
     deleteBtn.classList.add('deleteBtn');
     modalActionBar.appendChild(deleteBtn);
-    deleteBtn.addEventListener('click', function(e) {
+    let oldDeleteBtn = deleteBtn;
+    let newDeleteBtn = oldDeleteBtn.cloneNode(true);
+    oldDeleteBtn.replaceWith(newDeleteBtn);
+    newDeleteBtn.addEventListener('click', function(e) {
         project.removeTodo(todoIndex);
         renderTodos(projectIndex);
         // close modal
