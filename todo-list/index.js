@@ -162,7 +162,7 @@ function renderTodos(index) {
                 break;
             case 'low':
                 div.style.backgroundColor = 'green';
-                BroadcastChannel;
+                break;
             default:
                 div.style.backgroundColor = 'gray';
         }
@@ -279,14 +279,18 @@ function expandTodo(projectIndex, todoIndex) {
         renderTodos(projectIndex);
     });
     let modalActionBar = document.querySelector('#modalActionBar');
+
+    let existingDeleteBtn = modalActionBar.querySelector('.deleteBtn');
+    if (existingDeleteBtn) {
+        existingDeleteBtn.remove();
+    }
+
     let deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.classList.add('deleteBtn');
     modalActionBar.appendChild(deleteBtn);
-    let oldDeleteBtn = deleteBtn;
-    let newDeleteBtn = oldDeleteBtn.cloneNode(true);
-    oldDeleteBtn.replaceWith(newDeleteBtn);
-    newDeleteBtn.addEventListener('click', function(e) {
+
+    deleteBtn.addEventListener('click', function(e) {
         project.removeTodo(todoIndex);
         renderTodos(projectIndex);
         // close modal
