@@ -211,13 +211,17 @@ nav div button {
     display: none;
 }
 
+#todoName {
+    width: 300px;
+}
+
 #description {
-    height: 85px;
-    width: 200px;
+    height: 60px;
+    width: 300px;
 }
 
 #notes {
-    height: 85px;
+    height: 80px;
     width: 300px;
     margin-bottom: 20px;
 }
