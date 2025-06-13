@@ -6,6 +6,7 @@ body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
+    background-color: #e7e7e7;
 }
 
 header {
@@ -52,7 +53,8 @@ nav div button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    flex-grow: 1;
+    overflow-y: auto;
     background-color: #e7e7e7;
 }
 
@@ -65,6 +67,7 @@ nav div button {
     background-color: rgb(171, 228, 105);
     border-radius: 25px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    margin: 20px auto;
 }
 
 .projectDiv:hover {
@@ -83,13 +86,26 @@ nav div button {
 
 .todoDiv {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    height: 125px;
-    width: 250px;
-    margin: 40px auto 2px auto;
+    flex-direction: column;
+    /* height: 125px;
+    width: 280px; */
+    height: 180px;
+    width: 200px;
+    margin: 20px auto 15px auto;
     background-color: rgb(171, 228, 105);
     border-radius: 25px;
+    padding: 5px 15px 10px 15px;
+    box-sizing: border-box;
 }
+
+/* .todoName {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+} */
 
 .todoDiv:hover {
     cursor: pointer;
@@ -196,12 +212,12 @@ nav div button {
 }
 
 #description {
-    height: 100px;
+    height: 85px;
     width: 200px;
 }
 
 #notes {
-    height: 100px;
+    height: 85px;
     width: 300px;
     margin-bottom: 20px;
 }
@@ -264,7 +280,56 @@ nav div button {
     cursor: pointer;
     transform: scale(1.02);
     border-color: blueviolet;
-    border: 1px solid hsla(155, 100%, 19%, 0.657);
+    border: 1px solid hsla(0, 100%, 19%, 0.657);
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 2px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+input[type="checkbox"]:checked::after {
+    display: block;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+input[type="checkbox"]:hover {
+    border-color: #2196f3;
 }
 
 footer {
