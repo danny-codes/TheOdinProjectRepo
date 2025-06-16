@@ -1,10 +1,24 @@
-import { Project, defaultProject, createNewProject, createNewTodo, Todo } from "./app.js";
+import { Project, createNewProject, createNewTodo, Todo } from "./app.js";
 import {renderAbout} from './about.js';
+import {saveProjects, loadProjects} from './localStorage.js';
 import '../styles/styles.css';
 
-// DOM stuff
+// Check for any existing projects in localStorage
+Project.instances = loadProjects();
 
-console.log(defaultProject.todos);
+console.log('Loading projects...');
+Project.instances = loadProjects();
+console.log('Loaded projects:', Project.instances);
+
+if (Project.instances.length === 0) {
+    new Project('Default', '#abe469');
+    saveProjects(Project.instances);
+} else {
+    console.log('Projects already exist, skipping default creation');
+}
+
+// DOM stuff
+// console.log(defaultProject.todos);
 
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
@@ -89,8 +103,8 @@ projectsBtn.addEventListener('click', () => {
     clearContent();
     renderProjects();
     addProjectListeners();
-    let addProject = document.querySelector('.addProject');
-    addProject.addEventListener('click', addNewProject);
+    // let addProject = document.querySelector('.addProject');
+    // addProject.addEventListener('click', addNewProject);
 });
 
 function addNewProject(){
@@ -121,6 +135,7 @@ function addNewProject(){
         renderProjects();
         addProjectListeners();
         colorPicker.blur();
+        saveProjects(Project.instances);
     }
     
     div.appendChild(input);
@@ -231,6 +246,8 @@ function addNewTodo(index) {
     // close modal
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
+
+    saveProjects(Project.instances);
 };
 
 // Modal stuff
@@ -258,11 +275,8 @@ function todoListeners(projectIndex) {
         const project = Project.instances[projectIndex];
         const todo = project.todos[todoIndex];
         if (e.target.tagName.toLowerCase() === 'input' && e.target.type === 'checkbox') {
-            if (e.target.checked) {
-                todo.complete = true;
-            } else {
-                todo.complete = false;
-            }
+            todo.complete = e.target.checked;
+            saveProjects(Project.instances)
             return;
         }
         expandTodo(projectIndex, todoIndex);
@@ -306,6 +320,7 @@ function expandTodo(projectIndex, todoIndex) {
         overlay.classList.add("hidden");
 
         renderTodos(projectIndex);
+        saveProjects(Project.instances);
     });
     let modalActionBar = document.querySelector('#modalActionBar');
 
@@ -325,5 +340,8 @@ function expandTodo(projectIndex, todoIndex) {
         // close modal
         modal.classList.add('hidden');
         overlay.classList.add('hidden');
+        Project.instances = loadProjects();
+        saveProjects(Project.instances)
     });
+    // saveProjects(Project.instances);
 }
