@@ -1,4 +1,4 @@
-export { Project, defaultProject, createNewProject, createNewTodo, Todo };
+export { Project, createNewProject, createNewTodo, Todo };
 
 class Todo {
     constructor(title, description, dueDate, priority, notes = '', complete){
@@ -32,8 +32,6 @@ class Project {
         this.todos.splice(index, 1)
     }
 }
-
-const defaultProject = new Project('Default');
 
 function createNewProject(name, color) {
     return new Project(name, color);
