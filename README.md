@@ -8,6 +8,7 @@ Welcome to the live version of my projects from **The Odin Project**! This branc
 - [Admin Dashboard](https://danny-codes.github.io/TheOdinProjectRepo/admin-dashboard/index.html)
 - [Sign Up Form](https://danny-codes.github.io/TheOdinProjectRepo/sign-up-form/index.html)
 - [Restaurant Page](https://danny-codes.github.io/TheOdinProjectRepo/restaurant-page/dist/index.html)
+- [To-Do List](https://danny-codes.github.io/TheOdinProjectRepo/todo-list/dist/index.html)
 
 ### Purpose:
 
@@ -21,6 +22,8 @@ These projects showcase fundamental JavaScript concepts such as:
 - Form Validation
 - UI Design with Flexbox, Grid, and Responsive Layouts
 - Webpack, npm
+- ES6 Modules
+- Composition over inheritance
 
 <h3 align="left">Technologies used</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> </p>
