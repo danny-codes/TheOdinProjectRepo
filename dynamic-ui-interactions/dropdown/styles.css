@@ -43,18 +43,9 @@ body {
 }
 
 #toggle-close-icon,
-#main-header_logo,
 #main-header a span,
-body.sidebar-open #toggle-menu icon {
-    display: none;
-}
-
-#toggle-close-icon {
-  display: none;
-}
-
 body.sidebar-open #toggle-menu-icon {
-  display: none;
+    display: none;
 }
 
 body.sidebar-open #toggle-close-icon {
