@@ -1,0 +1,30 @@
+body {
+  font: 1em sans-serif;
+  width: 200px;
+  padding: 0;
+  margin: 15% auto;
+  line-height: 1.5rem;
+}
+
+p * {
+  display: block;
+}
+
+input{
+  appearance: none;
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+  font-family: inherit;
+  font-size: 90%;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  border-color: #900;
+  background-color: #fdd;
+}
+
+input:focus:invalid {
+  outline: none;
+}
