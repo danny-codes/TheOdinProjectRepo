@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <form novalidate id="myForm">
+        <label for="email">
+        <span>Please enter an email address:</span>
+        <input type="email" id="email" name="email" required minlength="8">
+        <span class="error" aria-live="polite"></span>
+        </label>
+
+        <br>
+
+        <label for="country">
+            <span>Your country:</span>
+            <select id="country" name="country" required>
+                <option value="">Select a country</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="GB">United Kingdom</option>
+                <option value="AU">Australia</option>
+            </select>
+        </label>
+        
+        <br>
+        
+        <label for="postal">
+            <span>Postal / ZIP code:</span>
+            <input type="text" id="postal" name="postal" required>
+        </label>
+
+        <br>
+
+        <label for="password">
+            <span>Your password:</span>
+            <input type="password" id="password" name="password" required minlength="8">
+            <span class="error" aria-live="polite"></span>
+        </label>
+
+        <br>
+
+        <label for="passwordConfirm">
+            <span>Confirm password:</span>
+            <input type="password" id="passwordConfirm" name="passwordConfirm" required minlength="8">
+            <span class="error" aria-live="polite"></span>
+        </label>
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+</body>
+</html>
