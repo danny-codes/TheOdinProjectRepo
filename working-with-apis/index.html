@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Images</title>
     <script src="script.js" defer></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <img src="#" alt="cat image">
+    <header>
+        <h1>Cat <span class="accent">Giphy</span> <span>Viewer</span><img id="header-thumb" src="#" alt="Thumbnail"></h1>
+        <p>Get a random cat <span class="accent">GIF</span> or search your own!</p>
+    </header>
+    <main>
+        <img id='gif' src="./img/loading-animation.gif" alt="GIF image">
+        <br>
+        <button>Give me another image!</button>
+        <br>
+        <label for="search">Search for images:</label>
+        <br>
+        <input type="text" id="search" name="search">
+    </main>
+    <footer>
+        <p>made by <a href="https://github.com/danny-codes" target="_blank" rel="noopener noreferrer">daniel codes</a>
+        </p>
+    </footer>
 </body>
 </html>
