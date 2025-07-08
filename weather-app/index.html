@@ -15,7 +15,7 @@
     <main>
         <form>
             <label for="location">Location:</label>
-            <input type="text" id="location" name="location">
+            <input type="text" id="location" name="location" pattern="[A-Za-z\- ]{1,168}" required>
             <button>Get forecast!</button>
         </form>
         <img id='gif' class='hidden' src="./img/loading-animation.gif" alt="GIF image">
