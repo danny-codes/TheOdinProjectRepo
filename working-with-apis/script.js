@@ -46,4 +46,17 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=IlKHuNJYVtEwiiK5eCkdsTaMW
   })
 }
 
+// rewrite function using async and wait
+// async function standardImage() {
+//   const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=IlKHuNJYVtEwiiK5eCkdsTaMWmzGzO4o&s=cats', {mode: 'cors'});
+//   response.json().then(function(response) {
+//     img.src = response.data.images.original.url;
+//     thumbnail.src = response.data.images.original.url;
+
+//   })
+//   .catch(e => {
+//     console.log(e);
+//   })
+// }
+
 standardImage();
