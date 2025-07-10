@@ -1,35 +1,31 @@
 const form = document.querySelector('form');
 const locationInput = document.querySelector('#location');
 const btn = document.querySelector('button');
+const apiKey = 'WJRKYHPYQK6DN2FABYSQEBNL7';
+let weatherData = null;
+let loader = document.querySelector('#gif');
 
-// btn.addEventListener('click', function(e) {
-//     e.preventDefault();
-//     if (!locationInput.value == '') {
-//         getForecast();
-//     }
-// });
-// or
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // if (form.checkValidity()) {
-    // alert("Input is valid. You are now going to get your weather forecast displayed!");
-    // // getForecast();
-    // } else {
-    // form.reportValidity();
-    // }
-    if (!locationInput.value == '') {
-        // getForecast();
-        alert('Input is valid. You are now going to get your weather forecast displayed!');
+    if (locationInput.checkValidity()) {
+        console.log('Input is valid.')
+        console.log(`User queried location: ${locationInput.value}`);
+        weatherData = null;
+        getWeather()
+    } else {
+        alert('Input is invalid', locationInput.validationMessage);
     }
 });
 
 function checkInput() {
     locationInput.setCustomValidity('');
-    if (locationInput.validity.valueMissing) {
-        locationInput.setCustomValidity('Please enter a place (e.g. Leon');
-    } else if (locationInput.validity.typeMismatch) {
-        locationInput.setCustomValidity('You need to enter a name of a city, town, place');
-    }
+    if (locationInput.checkValidity()) {
+        console.log('Input is valid.');;
+    } else if (locationInput.validity.valueMissing) {
+        locationInput.setCustomValidity('Please enter a place (e.g. Berlin)');
+    } else if (locationInput.validity.patternMismatch) {
+        locationInput.setCustomValidity('Only letters, spaces, and hyphens are allowed.');
+    } 
     locationInput.reportValidity();
 };
 
@@ -37,12 +33,50 @@ window.onload = () => {
     locationInput.oninput = checkInput;
 };
 
-// form.onsubmit = func();
 locationInput.addEventListener('blur', checkInput);
 
-async function getForecast() {
-    let input = locationInput.value;
-    const response = await fetch(`visual cross api${input}`,{mode: cors});
-    const weatherData = await response.json();
-    // need to get specific data and display it.
+async function getWeather() {
+    document.getElementById('weatherDiv').classList.add('hidden');
+    if (weatherData) {
+        console.log('Returning cached weather data.');
+        return weatherData;
+    }
+    try {
+        loader.classList.remove('hidden');
+        let placeName = encodeURIComponent(locationInput.value.trim());
+        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${placeName}/today/today?key=${apiKey}`,{mode: 'cors'});
+        const data = await response.json();
+        weatherData = data;
+        console.log(data);
+        processWeather();
+        return data;
+    } catch(e) {
+        console.log(e);
+    } finally {
+        loader.classList.add('hidden');
+    }
 };
+
+// async or regular func to process & display JSON?
+function processWeather() {
+    //process the JSON data, return an object
+    if (!weatherData) {
+        console.warn('No weather data available yet');
+        return;
+    }
+    // process relevant data here
+    console.log('City: '+ weatherData.address);
+    console.log('Temperature in F: '  + weatherData.currentConditions.temp);
+    console.log('Condition: ' + weatherData.currentConditions.conditions);
+    console.log('Description: ' + weatherData.description);
+    console.log('Time: ' + weatherData.currentConditions.datetime);
+
+    document.getElementById('locationName').textContent = weatherData.address;
+    document.getElementById('temperature').textContent = `${weatherData.currentConditions.temp} °F`;
+    document.getElementById('condition').textContent = weatherData.currentConditions.conditions;
+    document.getElementById('description').textContent = weatherData.description;
+    document.getElementById('time').textContent = weatherData.currentConditions.datetime;
+
+    document.getElementById('weatherDiv').classList.remove('hidden');
+};
+// function displayWeather() {};
