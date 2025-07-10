@@ -1,5 +1,6 @@
 import './styles/styles.css';
 import gifImage from './img/loading-animation.gif';
+import githubIcon from './img/github-mark-white.svg'
 const form = document.querySelector('form');
 const locationInput = document.querySelector('#location');
 const btn = document.querySelector('button');
@@ -7,6 +8,8 @@ const apiKey = 'WJRKYHPYQK6DN2FABYSQEBNL7';
 let weatherData = null;
 let loader = document.querySelector('#gif');
 loader.src = gifImage;
+let ghIconElement = document.querySelector('#gh-icon');
+ghIconElement.src = githubIcon;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
