@@ -122,6 +122,14 @@ A simple app to manage a personal library of books.
 
 ---
 
+## 📚 Prerequisite Foundations
+
+These projects build upon the fundamentals I practiced in **The Odin Project JavaScript Foundations** course.
+
+➡️ You can view those foundational exercises and projects here: [FoundationsJS Repository](https://github.com/danny-codes/FoundationsJS)
+
+---
+
 ## 🔄 How to Update
 
 1. Make changes to your local project (e.g., **tic-tac-toe**).  
