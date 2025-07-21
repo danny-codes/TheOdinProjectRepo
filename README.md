@@ -19,17 +19,19 @@ Check out my projects running on GitHub Pages:
 
 ---
 
-## 📚 Purpose
+## 📚 🛠 Skills & Tools Learned 
 
-This repository showcases JavaScript projects I built during the course, highlighting:
+Throughout these projects, I developed practical skills and worked with modern JavaScript tools, including:
 
-- DOM Manipulation & Event Handling  
-- Data Structures & Algorithms  
-- Form Validation  
-- Responsive UI Design (Flexbox, Grid)  
-- Webpack & npm build tools  
-- ES6 Modules & Modern JS practices  
-- Composition over inheritance principles
+- **JavaScript fundamentals:** DOM Manipulation, Event Handling, Data Structures & Algorithms, Form Validation  
+- **Asynchronous JavaScript & APIs:** Handling async code with `async/await`, fetching and processing data from public APIs (e.g., Weather App)  
+- **Application state management:** Using `localStorage` for data persistence in the Todo List project  
+- **Modular architecture:** Writing clean, maintainable code with ES6 modules, factory functions, and classes  
+- **Responsive UI Design:** Building layouts with CSS Flexbox and Grid for mobile-friendly interfaces  
+- **Tooling:** Using Webpack and npm for bundling, package management, and asset optimization  
+- **Libraries:** Utilizing helpful npm packages such as `date-fns` for date manipulation and formatting  
+
+These combined skills showcase a full-stack JavaScript foundation and modern web development best practices.
 
 ---
 
@@ -55,7 +57,7 @@ This repository showcases JavaScript projects I built during the course, highlig
 ![Weather App Screenshot](screenshots/weather-app.png)
 
 ### Admin Dashboard
-![Admin Dashboard Screenshot](screenshots/admnin-dashboard.png)
+![Admin Dashboard Screenshot](screenshots/admin-dashboard.png)
 
 ### Tic Tac Toe Game
 ![Tic Tac Toe Screenshot](screenshots/tic-tac-toe.png)
@@ -65,16 +67,6 @@ This repository showcases JavaScript projects I built during the course, highlig
 
 ### Digital Library
 ![Library Screenshot](screenshots/library.png)
-
----
-
-## Build Tools & APIs
-
-These projects are built using modern JavaScript tooling including **Webpack** and **npm**.  
-The Weather App practices working with asynchronous JavaScript and APIs by:
-
-- Handling asynchronous code with `async/await`  
-- Fetching weather data from a public API and updating the UI dynamically
 
 ---
 
@@ -94,17 +86,6 @@ A fully functional todo list application with:
 - Persistent storage using the Web Storage API (`localStorage`)
 
 The app emphasizes clean modular code, separation of concerns, and responsive design.
-
----
-
-## Additional Learnings
-
-- Working with asynchronous JavaScript and APIs  
-- Managing application state and persistence with `localStorage`  
-- Modular JavaScript architecture  
-- Responsive UI design with CSS Flexbox and Grid  
-- Using npm libraries such as `date-fns` for date manipulation  
-- Webpack for bundling and asset optimization  
 
 ---
 
