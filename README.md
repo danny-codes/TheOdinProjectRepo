@@ -1,7 +1,7 @@
 # The Odin Project Full Stack JavaScript — Live Projects
 
 Welcome to the live versions of my projects from **The Odin Project**!  
-This branch hosts the projects I built as part of the [The Odin Project Full Stack JavaScript course](https://www.theodinproject.com/).
+This branch hosts the projects I built as part of the [The Odin Project Full Stack JavaScript course](https://www.theodinproject.com/paths/full-stack-javascript).
 
 ---
 
