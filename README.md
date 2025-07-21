@@ -9,6 +9,8 @@ This branch hosts the projects I built as part of the [The Odin Project Full Sta
 
 Check out my projects running on GitHub Pages:
 
+- [Admin Dashboard](https://danny-codes.github.io/TheOdinProjectRepo/admin-dashboard/index.html)
+- [Sign Up Form](https://danny-codes.github.io/TheOdinProjectRepo/sign-up-form/index.html)
 - [Tic-Tac-Toe Game](https://danny-codes.github.io/TheOdinProjectRepo/tic-tac-toe/index.html)
 - [Digital Library](https://danny-codes.github.io/TheOdinProjectRepo/library-project/index.html)
 - [Restaurant Page](https://danny-codes.github.io/TheOdinProjectRepo/restaurant-page/dist/index.html)
