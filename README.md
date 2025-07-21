@@ -134,7 +134,7 @@ These projects build upon the fundamentals I practiced in **The Odin Project Jav
 ## 🔄 How to Update
 
 1. Make changes to your local project (e.g., **tic-tac-toe**).  
-2. Commit changes on your local `gh-pages` branch:
+2. Commit changes on your local `main` branch:
    ```bash
    git add .
    git commit -m "Update [project name]"
