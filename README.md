@@ -66,10 +66,11 @@ Built with modern JavaScript using Webpack and npm for bundling.
 
 ### Admin Dashboard
 
-A UI dashboard with charts and interactive elements.
-- Built using HTML, CSS, and JavaScript for frontend UI.
-- Demonstrates data visualization and UI layout skills.
-- Practices DOM manipulation and event handling.
+A static admin dashboard built using **HTML** and **CSS Grid**.
+
+- Demonstrates a clean, responsive layout using CSS Grid for positioning elements.
+- Focuses on practicing modern layout techniques without JavaScript.
+- Includes cards, navigation, and placeholder charts for layout structure.
 
 ![Admin Dashboard Screenshot](screenshots/admin-dashboard.png)
 
