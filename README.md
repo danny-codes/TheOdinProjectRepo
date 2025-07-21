@@ -60,6 +60,8 @@ Built with modern JavaScript using Webpack and npm for bundling.
 
 ![Weather App Screenshot](screenshots/weather-app.png)
 
+[Weather App Link](https://danny-codes.github.io/TheOdinProjectRepo/weather-app/dist/index.html)
+
 ---
 
 ### Admin Dashboard
@@ -71,6 +73,10 @@ A UI dashboard with charts and interactive elements.
 
 ![Admin Dashboard Screenshot](screenshots/admin-dashboard.png)
 
+[Admin Dashboard Link](https://danny-codes.github.io/TheOdinProjectRepo/admin-dashboard/index.html)
+
+---
+
 ### Tic Tac Toe Game
 
 A browser-based Tic Tac Toe game with interactive gameplay.
@@ -80,6 +86,10 @@ A browser-based Tic Tac Toe game with interactive gameplay.
 - Focuses on managing game state and updating the DOM accordingly.
 
 ![Tic Tac Toe Screenshot](screenshots/tic-tac-toe.png)
+
+[Tic-Tac-Toe Game Link](https://danny-codes.github.io/TheOdinProjectRepo/tic-tac-toe/index.html)
+
+---
 
 ### Todo List
 
@@ -93,6 +103,10 @@ The app emphasizes clean modular code, separation of concerns, and responsive de
 
 ![Todo List Screenshot](screenshots/todo-list.png)
 
+[To-Do List Link](https://danny-codes.github.io/TheOdinProjectRepo/todo-list/dist/index.html)
+
+---
+
 ### Digital Library
 
 A simple app to manage a personal library of books.
@@ -103,6 +117,8 @@ A simple app to manage a personal library of books.
 - Practices event handling, DOM manipulation, and working with data structures.
 
 ![Library Screenshot](screenshots/library.png)
+
+[Digital Library Link](https://danny-codes.github.io/TheOdinProjectRepo/library-project/index.html)
 
 ---
 
