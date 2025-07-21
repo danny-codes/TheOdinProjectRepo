@@ -11,8 +11,6 @@ Check out my projects running on GitHub Pages:
 
 - [Tic-Tac-Toe Game](https://danny-codes.github.io/TheOdinProjectRepo/tic-tac-toe/index.html)
 - [Digital Library](https://danny-codes.github.io/TheOdinProjectRepo/library-project/index.html)
-- [Admin Dashboard](https://danny-codes.github.io/TheOdinProjectRepo/admin-dashboard/index.html)
-- [Sign Up Form](https://danny-codes.github.io/TheOdinProjectRepo/sign-up-form/index.html)
 - [Restaurant Page](https://danny-codes.github.io/TheOdinProjectRepo/restaurant-page/dist/index.html)
 - [To-Do List](https://danny-codes.github.io/TheOdinProjectRepo/todo-list/dist/index.html)
 - [Weather App](https://danny-codes.github.io/TheOdinProjectRepo/weather-app/dist/index.html)
@@ -54,28 +52,32 @@ These combined skills showcase a full-stack JavaScript foundation and modern web
 ## Screenshots
 
 ### Weather App
+
+A simple weather dashboard that fetches live weather data from a weather API.  
+Built with modern JavaScript using Webpack and npm for bundling.
+
 ![Weather App Screenshot](screenshots/weather-app.png)
-
-### Admin Dashboard
-![Admin Dashboard Screenshot](screenshots/admin-dashboard.png)
-
-### Tic Tac Toe Game
-![Tic Tac Toe Screenshot](screenshots/tic-tac-toe.png)
-
-### Todo List
-![Todo List Screenshot](screenshots/todo-list.png)
-
-### Digital Library
-![Library Screenshot](screenshots/library.png)
 
 ---
 
-## Project Descriptions
+### Admin Dashboard
 
-### Weather App
+A UI dashboard with charts and interactive elements.
+- Built using HTML, CSS, and JavaScript for frontend UI.
+- Demonstrates data visualization and UI layout skills.
+- Practices DOM manipulation and event handling.
 
-A simple weather dashboard that fetches live weather data from a public API.  
-Built with modern JavaScript using Webpack and npm for bundling.
+![Admin Dashboard Screenshot](screenshots/admin-dashboard.png)
+
+### Tic Tac Toe Game
+
+A browser-based Tic Tac Toe game with interactive gameplay.
+- Uses modular JavaScript patterns (factories, IIFEs) to organize game logic.
+- Implements win/tie detection and enforces game rules.
+- Lets players enter names, restart the game, and displays game outcomes.
+- Focuses on managing game state and updating the DOM accordingly.
+
+![Tic Tac Toe Screenshot](screenshots/tic-tac-toe.png)
 
 ### Todo List
 
@@ -86,6 +88,19 @@ A fully functional todo list application with:
 - Persistent storage using the Web Storage API (`localStorage`)
 
 The app emphasizes clean modular code, separation of concerns, and responsive design.
+
+![Todo List Screenshot](screenshots/todo-list.png)
+
+### Digital Library
+
+A simple app to manage a personal library of books.
+
+- Uses a Book constructor and an array to store book objects with unique IDs.
+- Allows adding, removing, and toggling read status of books via a form and buttons.
+- Demonstrates separation of data management from UI rendering.
+- Practices event handling, DOM manipulation, and working with data structures.
+
+![Library Screenshot](screenshots/library.png)
 
 ---
 
