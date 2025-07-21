@@ -7,6 +7,9 @@ Welcome to the live version of my projects from **The Odin Project**! This branc
 - [Library](https://danny-codes.github.io/TheOdinProjectRepo/library-project/index.html)
 - [Admin Dashboard](https://danny-codes.github.io/TheOdinProjectRepo/admin-dashboard/index.html)
 - [Sign Up Form](https://danny-codes.github.io/TheOdinProjectRepo/sign-up-form/index.html)
+- [Restaurant Page](https://danny-codes.github.io/TheOdinProjectRepo/restaurant-page/dist/index.html)
+- [To-Do List](https://danny-codes.github.io/TheOdinProjectRepo/todo-list/dist/index.html)
+- [Weather App](https://danny-codes.github.io/TheOdinProjectRepo/weather-app/dist/index.html)
 
 ### Purpose:
 
