@@ -75,30 +75,75 @@ function fibonacciRecursion(n, startN = 0) {
     // try to use startN for accessing array's indexes
 };
 
-function fibonacciRecursive(n, startN = 0) {
-    let array = [];
-    if (array.length == n) {
-        console.log(array);
-        return;
+// function fibonacciRecursive(n, startN = 0, arr) {
+//     let array = [];
+//     if (array.length == n) {
+//         console.log(array);
+//         return;
+//     }
+//     if (startN === 0) {
+//         array.push(0);
+//         fibonacciRecursive(n, startN + 1, array);
+//         // return;
+//     } 
+//     if (startN === 1) {
+//         array.push(1);
+//         fibonacciRecursive(n, startN + 1, array);
+//         // return;
+//     }
+//     let fibArrVal = array[startN - 1] + array[startN - 2];
+//     array.push(fibArrVal);
+//     return fibonacciRecursive(n, startN + 1, array);
+// }
+
+function fibonacciRecursive(n) {
+    if (n === 0) {
+        return [];
+    } else if (n === 1) {
+        return [0];
+    } else if (n === 2) {
+        return [0, 1];
+    } else {
+        const arr = fibonacciRecursive(n - 1);
+        arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+        return arr;
     }
-    if (startN === 0) {
-        array.push(0);
-        fibonacciRecursive(n, startN + 1);
-        // return;
-    } 
-    if (startN === 1) {
-        array.push(1);
-        fibonacciRecursive(n, startN + 1);
-        // return;
-    }
-    let fibArrVal = array[startN - 1] + array[startN - 2];
-    array.push(fibArrVal);
-    fibonacciRecursive(n, startN + 1);
 }
 
+function mergeSort(arr) {
+    if (arr.length == 0 || arr.length == 1) {
+        return arr;
+    }
+    // let middleIndex = Math.floor((startIndex + endIndex) / 2);
+    mid = arr.length / 2;
+    left = mergeSort(arr[:mid]);
+    right = mergeSort(arr[mid:]);
+    return merge(left, right);
+}
 
+function merge(left, right) {
+    let merged = [];
+    i = j = 0;
 
+    while (i < left.length && j < right.length) {
+        if (left[i] < right [j]) {
+            merged.push(left[i]);
+            i += 1;
+        } else {
+            merged.push(right[j]);
+            j += 1;
+        }
+    }
+    merged.push(left[i:]);
+    merged.push(right[j:]);
 
+    return merged;
+}
+
+function factorial(targetN) {
+    if (targetN <= 1) return 1;
+    else return targetN * factorial(targetN - 1);
+}
 
 // function fibonacciRecursion(n, i){
 //     i = 0;
