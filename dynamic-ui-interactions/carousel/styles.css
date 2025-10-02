@@ -9,7 +9,7 @@ html, body {
     height: 100%;
 }
 
-#container {
+#carouselContainer {
     background-color: rgb(103, 103, 103);
     width: clamp(300px, 90%, 1200px);
     aspect-ratio: 16 / 9;
