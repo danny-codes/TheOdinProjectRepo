@@ -31,5 +31,7 @@ class Tree {
         return root; 
     }
 
-    includes(value) {}
+    includes(value) {
+        return this.array.includes(value);
+    }
 }
